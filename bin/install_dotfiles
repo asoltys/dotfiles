@@ -1,0 +1,4 @@
+#!/bin/bash
+openssl aes-256-cbc -d -a -in ~/.ssh/.config.encrypted -out ~/.ssh/config
+openssl aes-256-cbc -d -a -in .mysql_credentials.encrypted -out ~/.mysql_credentials
+
