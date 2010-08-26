@@ -1,0 +1,15 @@
+adam_soltys /var/www/adam_soltys
+budget_plugin /var/www/redmine_amitos/vendor/plugins/budget_plugin
+ccbc /var/www/ccbc
+egd_billing /opt/coldfusion8/wwwroot/egd_billing
+kernel /home/adam/Projects/linux-2.6
+nmcn /opt/coldfusion8/wwwroot/nmcn
+node_chat /home/adam/Projects/node_chat
+pacific_renewal /opt/coldfusion8/wwwroot/pacific_renewal
+redmine /var/www/redmine
+supermodel /opt/coldfusion8/wwwroot/supermodel
+timesheet_plugin /var/www/redmine_amitos/vendor/plugins/timesheet_plugin
+trainsim /var/www/trainsim
+trainsim_interface /var/www/trainsim_interface
+traintracks /var/www/traintracks
+

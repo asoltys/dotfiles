@@ -1,0 +1,15 @@
+U2FsdGVkX1+GRNfwNe5YBKW1CK7gebjt3OJCSc92Ci55w+yb7tKE8mrf/UpaaHHo
+1eGUs4l0glMm26KetXma78FuIbdhj+BTbNL+hWkk3aF7+1YjbRR1KUkGvbouyRBr
+LPHXzQsvuxU1Ql6Ol+vtP02mx9yghPFMqqeyzeyp2M34FcCKAYmbONYBl470RW2w
+G8e8Knd9pFun2SnW1wrdhjyC6GA1cPNCRFtQTrc7JqAtqLi6TTPWTRVFIuCcOnge
+6eA90FVz/YjNIFicVT2Ng/D7GtwfsWAOxBtSaMFftruKN0SfccSQYDFyDUI8fBW4
+0A2Yryf/ST1oB3O++1PBhxBytjxNHszdbqL6fUmA/IxTTUIEHkuFxoQA4BRBkMpu
+SA9l+32g3d/yT55oqmsEOUWwXGl65+5UhCCGFadCmUBqMT9ex+l/H02MyCpaPROm
+56g4EGfPUvf5u4rxy/HrflIcEjrH5Nf8tr9fCoXFEuFlf624Ct9NWcfbbPjjfWnw
+6crMRWqsaaWeeCBLwlj8axRvcMrW3ZyUjyAfeLtXsMorzmVVsW4pNj67i+u63D0i
+fhc01c8B1TinEY/L1lbu4rWkjjP0+GlVrE/KE6YccZHX0LlfxtAVKSq7uYrznFbR
+z7hSphR7q2y60ivO6alhZVX6dY0+ZC7svvppd2tTI9rifkX6fHD9BLSbSPmxpkfx
+XefoJ+BZz1UE0fqYfSMilA==
+
+# REMOVE THESE LINES AND RUN THIS COMMAND:
+openssl aes-256-cbc -d -a -in ssh_config.encrypted -out ~/.ssh/config
