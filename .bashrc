@@ -64,5 +64,6 @@ alias staf='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/staffing'
 alias qms='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/qms'
 alias trn='cd $WEB/trainsim'
 alias trni='cd $WEB/trainsim_interface'
+alias trt='cd $WEB/traintracks'
 
 [[ -s /home/adam/.rvm/scripts/rvm ]] && source /home/adam/.rvm/scripts/rvm 
