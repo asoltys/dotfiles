@@ -29,7 +29,8 @@ alias reda='rm $WEB/redmine && ln -s $WEB/redmine_amitos $WEB/redmine && cd $WEB
 alias reds='rm $WEB/redmine && ln -s $WEB/redmine_stock $WEB/redmine && cd $WEB/redmine'
 alias reb='git rebase edavis/master'
 
-alias d='ssh as $WEB/deploy.sh'
+alias c='git commit -am "Content update"'
+alias d='ssh as ~/deploy.sh'
 alias cfs='sudo /opt/coldfusion8/bin/coldfusion start'
 
 alias brc='vim ~/.bashrc'
