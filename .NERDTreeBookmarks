@@ -2,6 +2,7 @@ adam_soltys /var/www/adam_soltys
 budget_plugin /var/www/redmine_amitos/vendor/plugins/budget_plugin
 ccbc /var/www/ccbc
 egd_billing /opt/coldfusion8/wwwroot/egd_billing
+egdbooking /opt/coldfusion8/wwwroot/egdbooking
 kernel /home/adam/Projects/linux-2.6
 nmcn /opt/coldfusion8/wwwroot/nmcn
 node_chat /home/adam/Projects/node_chat
