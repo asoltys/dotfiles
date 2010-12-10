@@ -47,6 +47,7 @@ alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
 alias ngx='vim /opt/nginx/conf/nginx.conf'
+alias ngxr='sudo /etc/init.d/nginx restart'
 
 alias gs='git status'
 alias gp='git push'
