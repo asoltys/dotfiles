@@ -85,5 +85,6 @@ alias trn='cd $WEB/trainsim'
 alias trni='cd $WEB/trainsim_interface'
 alias trt='cd $WEB/traintracks'
 alias ext='cd $WEB/extranet'
+alias wet='cd $WEB/wet'
 
 [[ -s /home/adam/.rvm/scripts/rvm ]] && source /home/adam/.rvm/scripts/rvm 
