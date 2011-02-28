@@ -14,6 +14,7 @@ if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
 export PATH 
+CDPATH=$CDPATH:$WEB:~:/opt/coldfusion8/wwwroot
 
 source ~/.git-completion.sh
 source ~/.mysql_credentials
@@ -33,9 +34,11 @@ alias ngxr='sudo /etc/init.d/nginx restart'
 alias rst='sudo /etc/init.d/thin restart'
 alias myred='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D redmine'
 alias myreda='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D redmine_amitos'
+alias myredi='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D redmine_ircan'
 alias bured='mysqldump redmine -u $MYSQL_USER -p$MYSQL_PASSWORD > backup.sql'
 alias reda='rm $WEB/redmine && ln -s $WEB/redmine_amitos $WEB/redmine && cd $WEB/redmine'
 alias reds='rm $WEB/redmine && ln -s $WEB/redmine_stock $WEB/redmine && cd $WEB/redmine'
+alias redi='rm $WEB/redmine && ln -s $WEB/redmine_ircan $WEB/redmine && cd $WEB/redmine'
 alias ref='git fetch edavis'
 alias reb='git rebase edavis/master'
 alias rem='git merge edavis/master'
@@ -75,7 +78,9 @@ alias dev='cd /mnt/gtisdev'
 alias pac='cd /mnt/pac-apps'
 alias ed='cd /mnt/extdev/web/extranet'
 
+alias cic='cd /opt/coldfusion8/wwwroot/cic'
 alias b='cd /opt/coldfusion8/wwwroot/egd_billing'
+alias nps='cd /opt/coldfusion8/wwwroot/nps'
 alias r='cd /opt/coldfusion8/wwwroot/pacific_renewal'
 alias staf='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/staffing'
 alias comp='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/competency'
@@ -83,6 +88,7 @@ alias qms='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/qms'
 
 alias ext='cd $WEB/extranet'
 alias wet='cd $WEB/wet'
+alias li='cd $WEB/land_info'
 
 alias red='cd $WEB/redmine'
 alias bud='cd $WEB/redmine/vendor/plugins/budget_plugin'
