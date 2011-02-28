@@ -96,4 +96,6 @@ alias ts='cd $WEB/redmine/vendor/plugins/timesheet_plugin'
 alias rw='cd $WEB/redmine/vendor/plugins/redmine_w3h'
 alias clf='cd $WEB/redmine/vendor/plugins/redmine_clf2'
 
+function gi() { sudo ~/create_git_repo.sh "$@"; } 
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
