@@ -1,4 +1,5 @@
 # .bashrc
+set -o vi
 WEB=/var/www
 
 # User specific aliases and functions
@@ -69,7 +70,7 @@ alias gd='git diff'
 alias gog='git log'
 
 alias bump='git commit -am "Bumping submodule(s)"'
-alias c='git commit -am "Content update"'
+alias cu='git commit -am "Content update"'
 alias dep='ssh as ~/deploy.sh'
 alias cfs='sudo /opt/coldfusion8/bin/coldfusion start'
 alias gdmr='sudo /etc/init.d/gdm restart'
@@ -110,6 +111,7 @@ alias ls='ls -F'
 alias lsa='ls -Fla'
 alias f='popd > /dev/null'
 alias d='dirs -v'
+alias c='dirs -c'
 alias b='pushd +1 > /dev/null'
 
 alias 1='pushd +1 > /dev/null ; dirs -v'
@@ -122,5 +124,4 @@ alias 7='pushd +7 > /dev/null ; dirs -v'
 alias 8='pushd +8 > /dev/null ; dirs -v'
 
 function gi() { sudo ~/create_git_repo.sh "$@"; } 
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
