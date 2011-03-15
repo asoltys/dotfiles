@@ -108,7 +108,6 @@ alias clf='cd $WEB/redmine/vendor/plugins/redmine_clf2'
 
 alias ls='ls -F'
 alias lsa='ls -Fla'
-# alias cd='pushd > /dev/null'
 alias f='popd > /dev/null'
 alias d='dirs -v'
 alias b='pushd +1 > /dev/null'
