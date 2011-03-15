@@ -9,6 +9,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+TERM=xterm-color
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/bin
 if [ -d ~/bin ]; then
@@ -107,8 +108,8 @@ alias rw='cd $WEB/redmine/vendor/plugins/redmine_w3h'
 alias wr='cd $WEB/wet-boew-ruby-rails'
 alias clf='cd $WEB/redmine/vendor/plugins/redmine_clf2'
 
-alias ls='ls -F'
-alias lsa='ls -Fla'
+alias ls='ls -F --color'
+alias lsa='ls -Fla --color'
 alias f='popd > /dev/null'
 alias d='dirs -v'
 alias c='dirs -c'
@@ -122,6 +123,11 @@ alias 5='pushd +5 > /dev/null ; dirs -v'
 alias 6='pushd +6 > /dev/null ; dirs -v'
 alias 7='pushd +7 > /dev/null ; dirs -v'
 alias 8='pushd +8 > /dev/null ; dirs -v'
+
+LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;33:do=01;33:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;33:*.jpeg=01;33:*.gif=01;33:*.bmp=01;33:*.pbm=01;33:*.pgm=01;33:*.ppm=01;33:*.tga=01;33:*.xbm=01;33:*.xpm=01;33:*.tif=01;33:*.tiff=01;33:*.png=01;33:*.mov=01;33:*.mpg=01;33:*.mpeg=01;33:*.avi=01;33:*.fli=01;33:*.gl=01;33:*.dl=01;33:*.xcf=01;33:*.xwd=01;33:*.ogg=01;33:*.mp3=01;33:*.wav=01;33:'; 
+export LS_COLORS
+
+export PS1="\t \u@\h:\w\$"
 
 function gi() { sudo ~/create_git_repo.sh "$@"; } 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
