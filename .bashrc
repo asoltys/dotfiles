@@ -19,6 +19,10 @@ CDPATH=$CDPATH:$WEB:~:/opt/coldfusion8/wwwroot
 source ~/.git-completion.sh
 source ~/.mysql_credentials
 
+export HISTCONTROL=erasedups
+export HISTSIZE=9999
+export HISTIGNORE="&:[ ]*:exit"
+
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 alias inst='./configure && make && sudo make install'
@@ -102,7 +106,9 @@ alias rw='cd $WEB/redmine/vendor/plugins/redmine_w3h'
 alias wr='cd $WEB/wet-boew-ruby-rails'
 alias clf='cd $WEB/redmine/vendor/plugins/redmine_clf2'
 
-alias cd='pushd > /dev/null'
+alias ls='ls -F'
+alias lsa='ls -Fla'
+# alias cd='pushd > /dev/null'
 alias f='popd > /dev/null'
 alias d='dirs -v'
 alias b='pushd +1 > /dev/null'
