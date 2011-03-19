@@ -52,6 +52,11 @@ alias ref='git fetch edavis10'
 alias reb='git rebase edavis10/master'
 alias rem='git merge edavis10/master'
 
+alias rv='cd app/views'
+alias rl='cd app/views/layouts'
+alias rp='cd vendor/plugins'
+alias pb='cd public'
+
 alias git=hub
 alias gs='git status'
 alias gp='git push'
@@ -69,6 +74,7 @@ alias gmm='git merge master'
 alias grm='git rebase master'
 alias ga='git checkout amitos'
 alias gd='git diff'
+alias gb='git branch -a'
 alias gog='git log'
 
 alias bump='git commit -am "Bumping submodule(s)"'
