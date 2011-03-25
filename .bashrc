@@ -26,7 +26,6 @@ if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
 export PATH 
-CDPATH=$CDPATH:/var/www:~:/opt/coldfusion8/wwwroot
 
 source ~/.git-completion.sh
 source ~/.mysql_credentials
@@ -49,11 +48,17 @@ cd()
 { 
   local dir;
   local old_dirstack="${DIRSTACK[@]}";
+  echo ${old_dirstack};
+
+  if [ ! -d "$1" ]; then
+    return;
+  fi
+
   dirs -c;
 
   for dir in ${old_dirstack[@]}; do 
     if [[ $dir != "$1" ]] && [[ $dir != ${DIRSTACK[0]} ]]; then
-      pushd $dir > /dev/null;
+      pushd "${dir}" > /dev/null;
     fi;
   done; 
 
