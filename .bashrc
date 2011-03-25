@@ -43,28 +43,7 @@ function gi() { sudo ~/create_git_repo.sh "$@"; }
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
-# Fun with the directory stack
-cd() 
-{ 
-  local dir;
-  local old_dirstack="${DIRSTACK[@]}";
-  echo ${old_dirstack};
-
-  if [ ! -d "$1" ]; then
-    return;
-  fi
-
-  dirs -c;
-
-  for dir in ${old_dirstack[@]}; do 
-    if [[ $dir != "$1" ]] && [[ $dir != ${DIRSTACK[0]} ]]; then
-      pushd "${dir}" > /dev/null;
-    fi;
-  done; 
-
-  pushd "$1" > /dev/null;
-}
-
+alias cd='pushd > /dev/null'
 alias f='popd > /dev/null'
 alias d='dirs -v'
 alias c='dirs -c'
