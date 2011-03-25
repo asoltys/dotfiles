@@ -44,6 +44,7 @@ function gi() { sudo ~/create_git_repo.sh "$@"; }
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
+# Fun with the directory stack
 cd() 
 { 
   local dir;
@@ -98,7 +99,7 @@ alias git=hub
 alias gs='git status'
 alias gp='git push'
 alias gl='git pull'
-alias gaa='git add -A'
+alias ga='git add -A'
 alias gai='git add -i'
 alias gc='git commit'
 alias gn='git clean -fd'
@@ -109,7 +110,7 @@ alias gu='git submodule update'
 alias gm='git checkout master'
 alias gmm='git merge master'
 alias grm='git rebase master'
-alias ga='git checkout amitos'
+alias gam='git checkout amitos'
 alias gd='git diff'
 alias gb='git branch -a'
 alias gog='git log'
