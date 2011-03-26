@@ -1,6 +1,6 @@
 # .bashrc
 
-# User vi mode instead of Emacs for readline
+# Use vi mode instead of Emacs for readline
 set -o vi
 
 # Prevent terminal from catching C-s and C-q control flow characters
@@ -40,6 +40,8 @@ function gi() { sudo ~/create_git_repo.sh "$@"; }
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
+alias more=less
+
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
@@ -50,6 +52,7 @@ alias c='dirs -c'
 alias b='pushd +1 > /dev/null'
 
 alias inst='./configure && make && sudo make install'
+alias hist='history'
 
 alias rs='ruby script/server -u'
 alias rs3='rails s'
@@ -143,8 +146,9 @@ alias clf='cd /var/www/redmine/vendor/plugins/redmine_clf2'
 alias ls='ls -F --color --group-directories-first'
 alias lsa='ls -Fla --color --group-directories-first'
 alias p='ssh -N -f sircan -D 1080'
-alias pf='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
-alias pk='sudo pkill -f localhost:3000'
+alias pki='sudo pkill -f sircan'
+alias pl='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
+alias pkl='sudo pkill -f localhost:3000'
 
 alias 1='pushd +1 > /dev/null ; dirs -v'
 alias 2='pushd +2 > /dev/null ; dirs -v'
