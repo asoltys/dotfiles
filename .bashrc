@@ -3,9 +3,6 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
-# Prevent terminal from catching C-s and C-q control flow characters
-stty -ixon
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
