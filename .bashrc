@@ -3,6 +3,9 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
+# Disable control flow capture
+stty -ixon
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -34,15 +37,11 @@ export HISTIGNORE="&:[ ]*:exit"
 # Superquick bare repo creation
 function gi() { sudo ~/create_git_repo.sh "$@"; } 
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
 alias more=less
 
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
-alias cd='pushd > /dev/null'
 alias f='popd > /dev/null'
 alias d='dirs -v'
 alias c='dirs -c'
@@ -142,10 +141,10 @@ alias clf='cd /var/www/redmine/vendor/plugins/redmine_clf2'
 
 alias ls='ls -F --color --group-directories-first'
 alias lsa='ls -Fla --color --group-directories-first'
-alias p='ssh -N -f sircan -D 1080'
-alias pki='sudo pkill -f sircan'
-alias pl='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
-alias pkl='sudo pkill -f localhost:3000'
+alias p='sudo pkill -f localhost; ssh -N -f sircan -D 1080'
+alias pl='sudo pkill -f sircan; ssh -N -f localhost -D 1080'
+alias p3='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
+alias k3='sudo pkill -f localhost:3000'
 
 alias 1='pushd +1 > /dev/null ; dirs -v'
 alias 2='pushd +2 > /dev/null ; dirs -v'
@@ -156,3 +155,5 @@ alias 6='pushd +6 > /dev/null ; dirs -v'
 alias 7='pushd +7 > /dev/null ; dirs -v'
 alias 8='pushd +8 > /dev/null ; dirs -v'
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
