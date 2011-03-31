@@ -108,6 +108,7 @@ alias gdmr='sudo /etc/init.d/gdm restart'
 
 alias ~='cd ~'
 alias h='cd ~'
+alias v='cd ~/.vim'
 alias w='cd /var/www'
 alias a='cd /var/www/adam_soltys'
 alias k='cd ~/linux-2.6'
