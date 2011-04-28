@@ -1,2 +1,0 @@
-This is my linux config, all this gets dropped into ~
-Then 'source ~/.bashrc && sudo chmod +x ./install_dotfiles && install_dotfiles'

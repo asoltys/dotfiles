@@ -17,7 +17,7 @@ LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;33:do=01;33:bd=40;33;01:
 export LS_COLORS
 
 # Timestamped terminal
-PS1='\t \u@\h \W$(__git_ps1 ":%s")\$ '
+PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
 # Setup PATH
 PATH=$PATH:/usr/sbin
@@ -96,6 +96,7 @@ alias gmm='git merge master'
 alias grm='git rebase master'
 alias gam='git checkout amitos'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gb='git branch -a'
 alias gog='git log'
 alias gi='git rebase HEAD~10 -i'
@@ -109,7 +110,9 @@ alias gdmr='sudo /etc/init.d/gdm restart'
 alias ~='cd ~'
 alias h='cd ~'
 alias v='cd ~/.vim'
+alias opt='cd /opt'
 alias w='cd /var/www'
+alias cfw='cd /opt/coldfusion8/wwwroot'
 alias a='cd /var/www/adam_soltys'
 alias k='cd ~/linux-2.6'
 alias dwn='cd ~/Downloads'
