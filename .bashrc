@@ -93,7 +93,8 @@ alias gr='git reset --hard HEAD'
 alias gu='git submodule update'
 alias gm='git checkout master'
 alias gmm='git merge master'
-alias grm='git rebase master'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
 alias gam='git checkout amitos'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -146,6 +147,7 @@ alias ptv='cd /var/www/projects_tree_view'
 
 alias ls='ls -F --color --group-directories-first'
 alias lsa='ls -Fla --color --group-directories-first'
+alias lsl='ls -Fl --color --group-directories-first'
 alias p='sudo pkill -f localhost; ssh -N -f sircan -D 1080'
 alias pl='sudo pkill -f sircan; ssh -N -f localhost -D 1080'
 alias p3='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
@@ -159,6 +161,9 @@ alias 5='pushd +5 > /dev/null ; dirs -v'
 alias 6='pushd +6 > /dev/null ; dirs -v'
 alias 7='pushd +7 > /dev/null ; dirs -v'
 alias 8='pushd +8 > /dev/null ; dirs -v'
+
+# Git Completion with 'g'
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
