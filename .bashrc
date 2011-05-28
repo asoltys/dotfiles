@@ -164,8 +164,9 @@ alias 6='pushd +6 > /dev/null ; dirs -v'
 alias 7='pushd +7 > /dev/null ; dirs -v'
 alias 8='pushd +8 > /dev/null ; dirs -v'
 
-# Git Completion with 'g'
+# Git Completion with 'g' and 'gits'
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
+complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
