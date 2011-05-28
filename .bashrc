@@ -50,7 +50,9 @@ alias b='pushd +1 > /dev/null'
 alias inst='./configure && make && sudo make install'
 alias hist='history'
 
-alias rs='ruby script/server -u'
+alias dbg='rdebug -c'
+alias rs='touch tmp/restart.txt'
+alias rsd='touch tmp/restart.txt && touch tmp/debug.txt'
 alias rs3='rails s'
 alias rc='ruby script/console'
 alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
@@ -167,3 +169,6 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+if [ -e "`pwd`/.rvmrc" ]; then 
+  source "`pwd`/.rvmrc" 
+fi
