@@ -17,7 +17,7 @@ LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;33:do=01;33:bd=40;33;01:
 export LS_COLORS
 
 # Timestamped terminal
-PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
+# PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
 # Setup PATH
 PATH=$PATH:/usr/sbin
@@ -38,6 +38,7 @@ export HISTIGNORE="&:[ ]*:exit"
 function gi() { sudo ~/create_git_repo.sh "$@"; } 
 
 alias more=less
+alias s=sudo
 
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
@@ -51,8 +52,9 @@ alias inst='./configure && make && sudo make install'
 alias hist='history'
 
 alias dbg='rdebug -c'
-alias rs='touch tmp/restart.txt'
-alias rsd='touch tmp/restart.txt && touch tmp/debug.txt'
+alias rs='bundle exec thin start'
+alias rsd='bundle exec thin start -D'
+alias rsp='bundle exec thin start -e production'
 alias rs3='rails s'
 alias rc='ruby script/console'
 alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
@@ -107,7 +109,8 @@ alias gi='git rebase HEAD~10 -i'
 alias bump='git commit -am "Bumping submodule(s)"'
 alias cu='git commit -am "Content update"'
 alias dp='ssh as ~/deploy.sh'
-alias cfs='sudo /opt/coldfusion8/bin/coldfusion start'
+alias cfs='sudo /opt/coldfusion9/bin/coldfusion start'
+alias cfstop='sudo /opt/coldfusion9/bin/coldfusion stop'
 alias gdmr='sudo /etc/init.d/gdm restart'
 
 alias ~='cd ~'
@@ -170,6 +173,6 @@ complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-if [ -e "`pwd`/.rvmrc" ]; then 
-  source "`pwd`/.rvmrc" 
-fi
+# if [ -e "`pwd`/.rvmrc" ]; then 
+#   source "`pwd`/.rvmrc" 
+# fi
