@@ -1,4 +1,4 @@
-# .bashrc -- github editing? Cool!
+# .bashrc
 
 # Use vi mode instead of Emacs for readline
 set -o vi
