@@ -18,3 +18,5 @@
   p = push
   l = pull
   f = fetch
+[github]
+	user = asoltys

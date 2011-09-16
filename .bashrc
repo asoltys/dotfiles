@@ -136,6 +136,7 @@ alias r='cd /opt/coldfusion8/wwwroot/pacific_renewal'
 alias staf='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/staffing'
 alias comp='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/competency'
 alias qms='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/qms'
+alias cms='cd /opt/coldfusion8/wwwroot/pacific_renewal/applications/cms'
 
 alias ext='cd /var/www/extranet'
 alias wet='cd /var/www/wet'
