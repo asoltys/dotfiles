@@ -1,0 +1,3 @@
+#!/bin/bash
+filename="/home/adam/recordings/`date +'%Y-%m-%d-%H%M'`.mkv"
+ffmpeg -f x11grab -r 30 -s 800x600 -i :0.0 -sameq $filename

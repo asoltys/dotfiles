@@ -43,11 +43,6 @@ alias s=sudo
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
-alias f='popd > /dev/null'
-alias d='dirs -v'
-alias c='dirs -c'
-alias b='pushd +1 > /dev/null'
-
 alias inst='./configure && make && sudo make install'
 alias hist='history'
 
@@ -166,8 +161,6 @@ alias 5='pushd +5 > /dev/null ; dirs -v'
 alias 6='pushd +6 > /dev/null ; dirs -v'
 alias 7='pushd +7 > /dev/null ; dirs -v'
 alias 8='pushd +8 > /dev/null ; dirs -v'
-
-v() { gvim --remote $1 > /dev/null 2>&1 ; wmctrl -a GVIM ; }
 
 # Git Completion with 'g' and 'gits'
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null

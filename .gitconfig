@@ -20,3 +20,5 @@
   f = fetch
 [github]
 	user = asoltys
+[color]
+	ui = always
