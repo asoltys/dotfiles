@@ -4,7 +4,9 @@
 set -o vi
 
 # Disable control flow capture
-stty -ixon
+if [ -t 0 ]; then   # only run if stdin is a terminal
+  stty -ixon
+fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -27,8 +29,11 @@ if [ -d ~/bin ]; then
 fi
 export PATH 
 
+
 source ~/.git-completion.sh
 source ~/.mysql_credentials
+source ~/.github_credentials
+source ~/.dropbox_credentials
 
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
@@ -142,6 +147,7 @@ alias red='cd /var/www/redmine'
 alias bud='cd /var/www/redmine/vendor/plugins/budget_plugin'
 alias ts='cd /var/www/redmine/vendor/plugins/timesheet_plugin'
 alias rw='cd /var/www/redmine_w3h'
+alias rb='cd /var/www/redmine-bulk_time_entry_plugin'
 alias clf='cd /var/www/redmine_clf2'
 alias ptv='cd /var/www/projects_tree_view'
 
@@ -152,6 +158,8 @@ alias p='sudo pkill -f localhost; ssh -N -f sircan -D 1080'
 alias pl='sudo pkill -f sircan; ssh -N -f localhost -D 1080'
 alias p3='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
 alias k3='sudo pkill -f localhost:3000'
+alias rd='ssh ircan -N -f -L 3389:184.106.250.111:3389'
+alias krd='sudo pkill -f 3389'
 
 alias 1='pushd +1 > /dev/null ; dirs -v'
 alias 2='pushd +2 > /dev/null ; dirs -v'
