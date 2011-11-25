@@ -1,4 +1,5 @@
 #!/bin/bash
-openssl aes-256-cbc -d -a -in ~/.ssh/.config.encrypted -out ~/.ssh/config
+openssl aes-256-cbc -d -a -in ~/.ssh/config.encrypted -out ~/.ssh/config
 openssl aes-256-cbc -d -a -in .mysql_credentials.encrypted -out ~/.mysql_credentials
-
+echo * > ~/.git/info/exclude
+ln -s /usr/local/bin/git ~/bin/gits
