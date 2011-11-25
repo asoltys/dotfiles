@@ -22,3 +22,7 @@
 	user = asoltys
 [color]
 	ui = always
+[hub]
+	protocol = https
+[http]
+	postBuffer = 524288000
