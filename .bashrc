@@ -35,7 +35,7 @@ export HISTIGNORE="&:[ ]*:exit"
 function gi() { sudo ~/create_git_repo.sh "$@"; } 
 
 alias more=less
-alias s=sudo
+alias sd=sudo
 
 alias brc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
