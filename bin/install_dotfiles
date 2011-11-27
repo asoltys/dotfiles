@@ -3,5 +3,6 @@ openssl aes-256-cbc -d -a -in ~/.ssh/config.encrypted -out ~/.ssh/config
 openssl aes-256-cbc -d -a -in .mysql_credentials.enc -out ~/.mysql_credentials
 openssl aes-256-cbc -d -a -in .github_credentials.enc -out ~/.github_credentials
 openssl aes-256-cbc -d -a -in .dropbox_credentials.enc -out ~/.dropbox_credentials
+openssl aes-256-cbc -d -a -in .netrc.enc -out ~/.netrc
 echo * > ~/.git/info/exclude
 ln -s /usr/local/bin/git ~/bin/gits
