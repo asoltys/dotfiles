@@ -5,5 +5,6 @@ openssl aes-256-cbc -d -a -in .github_credentials.enc -out ~/.github_credentials
 openssl aes-256-cbc -d -a -in .dropbox_credentials.enc -out ~/.dropbox_credentials
 openssl aes-256-cbc -d -a -in .netrc.enc -out ~/.netrc
 openssl aes-256-cbc -d -a -in .filezilla/sitemanager.xml.enc -out ~/.filezilla/sitemanager.xml
+openssl aes-256-cbc -d -a -in .ssh/id_rsa.enc -out ~/.ssh/id_rsa
 echo * > ~/.git/info/exclude
 ln -s /usr/local/bin/git ~/bin/gits
