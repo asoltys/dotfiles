@@ -1,10 +1,10 @@
 #!/bin/bash
 openssl aes-256-cbc -d -in ~/.ssh/config.encrypted -out ~/.ssh/config
-openssl aes-256-cbc -d -a -in .mysql_credentials.enc -out ~/.mysql_credentials
-openssl aes-256-cbc -d -in .github_credentials.enc -out ~/.github_credentials
-openssl aes-256-cbc -d -in .dropbox_credentials.enc -out ~/.dropbox_credentials
-openssl aes-256-cbc -d -in .netrc.enc -out ~/.netrc
-openssl aes-256-cbc -d -in .filezilla/sitemanager.xml.enc -out ~/.filezilla/sitemanager.xml
-openssl aes-256-cbc -d -a -in .ssh/id_rsa.enc -out ~/.ssh/id_rsa
+openssl aes-256-cbc -d -in ~/.mysql_credentials.enc -out ~/.mysql_credentials
+openssl aes-256-cbc -d -in ~/.github_credentials.enc -out ~/.github_credentials
+openssl aes-256-cbc -d -in ~/.dropbox_credentials.enc -out ~/.dropbox_credentials
+openssl aes-256-cbc -d -in ~/.netrc.enc -out ~/.netrc
+openssl aes-256-cbc -d -in ~/.filezilla/sitemanager.xml.enc -out ~/.filezilla/sitemanager.xml
+openssl aes-256-cbc -d -in ~/.id_rsa.enc -out ~/.ssh/id_rsa
 echo * > ~/.git/info/exclude
 ln -s /usr/local/bin/git ~/bin/gits
