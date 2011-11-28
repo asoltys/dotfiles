@@ -20,7 +20,7 @@ export LS_COLORS
 export GREP_OPTIONS='--color=auto'
 
 # Timestamped terminal
-# PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
+PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
 # Setup PATH
 PATH=$PATH:/usr/sbin

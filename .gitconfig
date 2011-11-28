@@ -18,6 +18,7 @@
   p = push
   l = pull
   f = fetch
+  c = clone
 [github]
 	user = asoltys
 [color]
