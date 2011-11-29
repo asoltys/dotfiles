@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+outfile=$(basename "$@")
+outfile=${outfile%.*}
+openssl aes-256-cbc -d -in "$@" -kfile ~/.pwd -out "$outfile"
