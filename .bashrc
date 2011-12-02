@@ -1,6 +1,9 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
+# Load aliases
+. ~/.bash_aliases
+
 # Disable control flow capture
 if [ -t 0 ]; then   # only run if stdin is a terminal
   stty -ixon
