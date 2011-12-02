@@ -3,6 +3,7 @@
 alias more=less
 alias sd=sudo
 
+alias ba='vim ~/.bash_aliases'
 alias brc='vim ~/.bashrc'
 alias src='. ~/.bashrc'
 
