@@ -6,5 +6,6 @@ openssl aes-256-cbc -d -in ~/.dropbox_credentials.enc -kfile ~/.pwd -out ~/.drop
 openssl aes-256-cbc -d -in ~/.netrc.enc -kfile ~/.pwd -out ~/.netrc
 openssl aes-256-cbc -d -in ~/.filezilla/sitemanager.xml.enc -kfile ~/.pwd -out ~/.filezilla/sitemanager.xml
 openssl aes-256-cbc -d -in ~/.id_rsa.enc -kfile ~/.pwd -out ~/.ssh/id_rsa
+openssl aes-256-cbc -d -in ~/.gitconfig.enc -kfile ~/.pwd -out ~/.gitconfig
 echo "*" > ~/.git/info/exclude
 ln -s /usr/bin/git ~/bin/gits
