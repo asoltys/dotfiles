@@ -42,8 +42,6 @@ export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 
-# Superquick bare repo creation
-function gi() { sudo ~/create_git_repo.sh "$@"; } 
 function cd() {
   builtin cd "$*"
   ls
