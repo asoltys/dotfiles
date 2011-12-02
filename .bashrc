@@ -44,6 +44,11 @@ export HISTIGNORE="&:[ ]*:exit"
 
 # Superquick bare repo creation
 function gi() { sudo ~/create_git_repo.sh "$@"; } 
+function cd() {
+  builtin cd "$*"
+  ls
+}
+
 
 alias more=less
 alias sd=sudo
