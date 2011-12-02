@@ -13,34 +13,13 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Color terminal
-export TERM=xterm-256color
-# TERM=xterm-color
-# LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;33:do=01;33:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;33:*.jpeg=01;33:*.gif=01;33:*.bmp=01;33:*.pbm=01;33:*.pgm=01;33:*.ppm=01;33:*.tga=01;33:*.xbm=01;33:*.xpm=01;33:*.tif=01;33:*.tiff=01;33:*.png=01;33:*.mov=01;33:*.mpg=01;33:*.mpeg=01;33:*.avi=01;33:*.fli=01;33:*.gl=01;33:*.dl=01;33:*.xcf=01;33:*.xwd=01;33:*.ogg=01;33:*.mp3=01;33:*.wav=01;33:'; 
-# export LS_COLORS
-export GREP_OPTIONS='--color=auto'
-export EDITOR=vim
-
 # Timestamped terminal
 PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
-# Setup PATH
-PATH=$PATH:/usr/sbin
-PATH=$PATH:/usr/local/bin
-if [ -d ~/bin ]; then
-  PATH=$PATH:~/bin
-fi
-export PATH 
-
-
-source ~/.git-completion.sh
-source ~/.mysql_credentials
-source ~/.github_credentials
-source ~/.dropbox_credentials
-
-export HISTCONTROL=erasedups
-export HISTSIZE=9999
-export HISTIGNORE="&:[ ]*:exit"
+. ~/.git-completion.sh
+. ~/.mysql_credentials
+. ~/.github_credentials
+. ~/.dropbox_credentials
 
 function cd() {
   builtin cd "$*"
@@ -52,7 +31,7 @@ alias more=less
 alias sd=sudo
 
 alias brc='vim ~/.bashrc'
-alias src='source ~/.bashrc'
+alias src='. ~/.bashrc'
 
 alias inst='./configure && make && sudo make install'
 alias hist='history'
