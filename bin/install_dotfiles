@@ -7,4 +7,4 @@ openssl aes-256-cbc -d -in ~/.netrc.enc -kfile ~/.pwd -out ~/.netrc
 openssl aes-256-cbc -d -in ~/.filezilla/sitemanager.xml.enc -kfile ~/.pwd -out ~/.filezilla/sitemanager.xml
 openssl aes-256-cbc -d -in ~/.id_rsa.enc -kfile ~/.pwd -out ~/.ssh/id_rsa
 echo "*" > ~/.git/info/exclude
-ln -s /usr/local/bin/git ~/bin/gits
+ln -s /usr/bin/git ~/bin/gits
