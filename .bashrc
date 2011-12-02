@@ -145,6 +145,7 @@ alias wet='cd /var/www/wet'
 alias wr='cd /var/www/wet-boew-ruby-rails'
 alias li='cd /var/www/land_info'
 alias mas='cd /var/www/masquerade'
+alias ip='cd /var/www/webdev02/ipmg'
 
 alias red='cd /var/www/redmine'
 alias bud='cd /var/www/redmine/vendor/plugins/budget_plugin'
@@ -182,3 +183,5 @@ complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 # if [ -e "`pwd`/.rvmrc" ]; then 
 #   source "`pwd`/.rvmrc" 
 # fi
+
+source ~/bin/bashmarks.sh
