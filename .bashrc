@@ -1,5 +1,3 @@
-# .bashrc
-
 # Use vi mode instead of Emacs for readline
 set -o vi
 
@@ -16,147 +14,19 @@ fi
 # Timestamped terminal
 PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
-. ~/.git-completion.sh
+# Passwords n' tokens
 . ~/.mysql_credentials
 . ~/.github_credentials
 . ~/.dropbox_credentials
 
+# List dir contents after changing into it
 function cd() {
   builtin cd "$*"
   ls
 }
 
-
-alias more=less
-alias sd=sudo
-
-alias brc='vim ~/.bashrc'
-alias src='. ~/.bashrc'
-
-alias inst='./configure && make && sudo make install'
-alias hist='history'
-
-alias dbg='rdebug -c'
-alias rs='bundle exec thin start'
-alias rsd='bundle exec thin start -D'
-alias rsp='bundle exec thin start -e production'
-alias rs3='rails s'
-alias rc='ruby script/console'
-alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
-
-alias ngx='vim /opt/nginx/conf/nginx.conf'
-alias ngxr='sudo /etc/init.d/nginx restart'
-
-alias rst='sudo /etc/init.d/thin restart'
-alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
-alias myli='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D land_info'
-alias myred='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D redmine'
-alias myreda='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D redmine_amitos'
-alias myredi='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD -D redmine_ircan'
-alias bured='mysqldump redmine -u $MYSQL_USER -p$MYSQL_PASSWORD > backup.sql'
-alias reda='rm /var/www/redmine && ln -s /var/www/redmine_amitos /var/www/redmine && cd /var/www/redmine'
-alias reds='rm /var/www/redmine && ln -s /var/www/redmine_stock /var/www/redmine && cd /var/www/redmine'
-alias redi='rm /var/www/redmine && ln -s /var/www/redmine_ircan /var/www/redmine && cd /var/www/redmine'
-alias ch='cd /var/www/chiliproject'
-alias ref='git fetch edavis10'
-alias reb='git rebase edavis10/master'
-alias rem='git merge edavis10/master'
-
-alias rv='cd app/views'
-alias rl='cd app/views/layouts'
-alias rp='cd vendor/plugins'
-alias pb='cd public'
-
-alias g=hub
-alias git=hub
-alias gs='git status'
-alias gp='git push'
-alias gl='git pull'
-alias ga='git add -A'
-alias gai='git add -i'
-alias gc='git commit'
-alias gn='git clean -fd'
-alias gf='git fetch'
-alias gg='git config -l'
-alias gr='git reset --hard HEAD'
-alias gu='git submodule update'
-alias gm='git checkout master'
-alias gmm='git merge master'
-alias gra='git rebase --abort'
-alias grc='git rebase --continue'
-alias gam='git checkout amitos'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gb='git branch -a'
-alias gog='git log'
-alias gi='git rebase HEAD~10 -i'
-
-alias bump='git commit -am "Bumping submodule(s)"'
-alias cu='git commit -am "Content update"'
-alias dp='ssh as ~/deploy.sh'
-alias cfs='sudo /opt/coldfusion9/bin/coldfusion start'
-alias cfstop='sudo /opt/coldfusion9/bin/coldfusion stop'
-alias gdmr='sudo /etc/init.d/gdm restart'
-
-alias ~='cd ~'
-alias h='cd ~'
-alias opt='cd /opt'
-alias w='cd /var/www'
-alias cfw='cd /opt/coldfusion9/wwwroot'
-alias a='cd /var/www/adam_soltys'
-alias k='cd ~/linux-2.6'
-alias dwn='cd ~/Downloads'
-alias dsk='cd ~/Desktop'
-
-alias dev='cd /mnt/gtisdev'
-alias pac='cd /mnt/pac-apps'
-alias ed='cd /mnt/extdev/web/extranet'
-
-alias cic='cd /opt/coldfusion9/wwwroot/cic'
-alias bil='cd /opt/coldfusion9/wwwroot/egd_billing'
-alias bk='cd /opt/coldfusion9/wwwroot/egdbooking'
-alias nps='cd /opt/coldfusion9/wwwroot/nps'
-alias r='cd /opt/coldfusion9/wwwroot/pacific_renewal'
-alias staf='cd /opt/coldfusion9/wwwroot/pacific_renewal/applications/staffing'
-alias comp='cd /opt/coldfusion9/wwwroot/pacific_renewal/applications/competency'
-alias qms='cd /opt/coldfusion9/wwwroot/pacific_renewal/applications/qms'
-alias cms='cd /opt/coldfusion9/wwwroot/pacific_renewal/applications/cms'
-
-alias ext='cd /var/www/extranet'
-alias wet='cd /var/www/wet'
-alias wr='cd /var/www/wet-boew-ruby-rails'
-alias li='cd /var/www/land_info'
-alias mas='cd /var/www/masquerade'
-alias ip='cd /var/www/webdev02/ipmg'
-
-alias red='cd /var/www/redmine'
-alias bud='cd /var/www/redmine/vendor/plugins/budget_plugin'
-alias ts='cd /var/www/redmine/vendor/plugins/timesheet_plugin'
-alias rw='cd /var/www/redmine_w3h'
-alias rb='cd /var/www/redmine-bulk_time_entry_plugin'
-alias clf='cd /var/www/redmine_clf2'
-alias ptv='cd /var/www/projects_tree_view'
-
-alias ls='ls -F --color --group-directories-first'
-alias lsa='ls -Fla --color --group-directories-first'
-alias lsl='ls -Fl --color --group-directories-first'
-alias p='sudo pkill -f localhost; ssh -N -f sircan -D 1080'
-alias pl='sudo pkill -f sircan; ssh -N -f localhost -D 1080'
-alias p3='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
-alias k3='sudo pkill -f localhost:3000'
-alias rd='ssh ircan -N -f -L 3389:184.106.250.111:3389'
-alias krd='sudo pkill -f 3389'
-
-alias 1='pushd +1 > /dev/null ; dirs -v'
-alias 2='pushd +2 > /dev/null ; dirs -v'
-alias 3='pushd +3 > /dev/null ; dirs -v'
-alias 4='pushd +4 > /dev/null ; dirs -v'
-alias 5='pushd +5 > /dev/null ; dirs -v'
-alias 6='pushd +6 > /dev/null ; dirs -v'
-alias 7='pushd +7 > /dev/null ; dirs -v'
-alias 8='pushd +8 > /dev/null ; dirs -v'
-
 # Git Completion with 'g' and 'gits'
+. ~/.git-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 
@@ -166,4 +36,5 @@ complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 #   source "`pwd`/.rvmrc" 
 # fi
 
-source ~/bin/bashmarks.sh
+# Bashmarks script for fave'ing directories
+. ~/bin/bashmarks.sh
