@@ -39,7 +39,7 @@ fi
 touch $SDIRS
 
 # save current directory to bookmarks
-function s {
+function bk {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
