@@ -78,7 +78,6 @@ alias opt='cd /opt'
 alias w='cd /var/www'
 alias cfw='cd /opt/coldfusion9/wwwroot'
 alias a='cd /var/www/adam_soltys'
-alias k='cd ~/linux-2.6'
 alias dwn='cd ~/Downloads'
 alias dsk='cd ~/Desktop'
 
