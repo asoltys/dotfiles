@@ -15,7 +15,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Timestamped terminal
-PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
+# PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
 # Passwords n' tokens
 . ~/.mysql_credentials
