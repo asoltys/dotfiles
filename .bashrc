@@ -26,6 +26,8 @@ PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 function cd() {
   builtin cd "$*"
   ls
+  pwd >> ~/.dirs
+  tail -n 10 ~/.dirs > tmp; cat tmp > ~/.dirs; rm tmp;
 }
 
 # Git Completion with 'g' and 'gits'

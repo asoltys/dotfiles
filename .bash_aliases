@@ -121,11 +121,6 @@ alias k3='sudo pkill -f localhost:3000'
 alias rd='ssh ircan -N -f -L 3389:184.106.250.111:3389'
 alias krd='sudo pkill -f 3389'
 
-alias 1='pushd +1 > /dev/null ; dirs -v'
-alias 2='pushd +2 > /dev/null ; dirs -v'
-alias 3='pushd +3 > /dev/null ; dirs -v'
-alias 4='pushd +4 > /dev/null ; dirs -v'
-alias 5='pushd +5 > /dev/null ; dirs -v'
-alias 6='pushd +6 > /dev/null ; dirs -v'
-alias 7='pushd +7 > /dev/null ; dirs -v'
-alias 8='pushd +8 > /dev/null ; dirs -v'
+for i in `seq 1 9`; do
+  alias $i="cd $(tail -n $i ~/.dirs | head -n 1)"
+done
