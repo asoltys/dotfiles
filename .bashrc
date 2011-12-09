@@ -27,11 +27,14 @@ function cd() {
   builtin cd "$*"
   ls
   pwd >> ~/.dirs
-  tail -n 10 ~/.dirs > tmp; cat tmp > ~/.dirs; rm tmp;
+  tail -n 10 ~/.dirs > ~/.tmpdirs; sort ~/.tmpdirs | uniq > ~/.dirs; rm ~/.tmpdirs;
+  for i in `seq 1 9`; do
+    alias $i="cd $(tail -n $i ~/.dirs | head -n 1)"
+  done
 }
 
 # Git Completion with 'g' and 'gits'
-. ~/.git-completion.sh
+source ~/.git-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 
