@@ -74,6 +74,7 @@ alias gdmr='sudo /etc/init.d/gdm restart'
 
 alias ~='cd ~'
 alias h='cd ~'
+alias d='cat ~/.dirs'
 alias opt='cd /opt'
 alias w='cd /var/www'
 alias cfw='cd /opt/coldfusion9/wwwroot'
@@ -100,7 +101,7 @@ alias wet='cd /var/www/wet'
 alias wr='cd /var/www/wet-boew-ruby-rails'
 alias li='cd /var/www/land_info'
 alias mas='cd /var/www/masquerade'
-alias ip='cd /var/www/webdev02/ipmg'
+alias ipmg='cd /var/www/webdev02/ipmg'
 
 alias red='cd /var/www/redmine'
 alias bud='cd /var/www/redmine/vendor/plugins/budget_plugin'
@@ -113,13 +114,10 @@ alias ptv='cd /var/www/projects_tree_view'
 alias ls='ls -F --color --group-directories-first'
 alias lsa='ls -Fla --color --group-directories-first'
 alias lsl='ls -Fl --color --group-directories-first'
-alias p='sudo pkill -f localhost; ssh -N -f sircan -D 1080'
-alias pl='sudo pkill -f sircan; ssh -N -f localhost -D 1080'
+alias p='sudo pkill -9 ssh; ssh -N -f sircan -D 1080'
+alias pl='sudo pkill -9 ssh; sleep 1; ssh -N -f localhost -D 1080'
 alias p3='sudo ssh -f -N -l root -L 80:localhost:3000 root@localhost'
 alias k3='sudo pkill -f localhost:3000'
 alias rd='ssh ircan -N -f -L 3389:184.106.250.111:3389'
 alias krd='sudo pkill -f 3389'
 
-for i in `seq 1 9`; do
-  alias $i="cd $(tail -n $i ~/.dirs | head -n 1)"
-done
