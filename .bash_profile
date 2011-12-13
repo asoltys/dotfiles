@@ -11,3 +11,7 @@ if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
 export PATH 
+
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi

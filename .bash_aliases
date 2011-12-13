@@ -41,8 +41,6 @@ alias rl='cd app/views/layouts'
 alias rp='cd vendor/plugins'
 alias pb='cd public'
 
-alias g=hub
-alias git=hub
 alias gs='git status'
 alias gp='git push'
 alias gl='git pull'
@@ -74,7 +72,7 @@ alias gdmr='sudo /etc/init.d/gdm restart'
 
 alias ~='cd ~'
 alias h='cd ~'
-alias d='cat ~/.dirs'
+alias d='cat -n ~/.dirs'
 alias opt='cd /opt'
 alias w='cd /var/www'
 alias cfw='cd /opt/coldfusion9/wwwroot'
@@ -102,6 +100,7 @@ alias wr='cd /var/www/wet-boew-ruby-rails'
 alias li='cd /var/www/land_info'
 alias mas='cd /var/www/masquerade'
 alias ipmg='cd /var/www/webdev02/ipmg'
+alias egd='cd /var/www/webdev02/pac/cse-egd'
 
 alias red='cd /var/www/redmine'
 alias bud='cd /var/www/redmine/vendor/plugins/budget_plugin'
