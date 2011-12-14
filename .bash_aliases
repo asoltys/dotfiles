@@ -36,6 +36,9 @@ alias ref='git fetch edavis10'
 alias reb='git rebase edavis10/master'
 alias rem='git merge edavis10/master'
 
+alias gtis='rdesktop gtisdev.pac.pwgsc.gc.ca -u "$PWGSC_USERNAME" -p "$PWSGC_PASSWORD" -g 1280x1024 -D -K &'
+alias pac-apps='rdesktop pac-apps.pac.pwgsc.gc.ca -u "$PWGSC_USERNAME" -p "$PWSGC_PASSWORD" -g 1280x1024 -D -K &'
+
 alias rv='cd app/views'
 alias rl='cd app/views/layouts'
 alias rp='cd vendor/plugins'
@@ -99,7 +102,7 @@ alias wet='cd /var/www/wet'
 alias wr='cd /var/www/wet-boew-ruby-rails'
 alias li='cd /var/www/land_info'
 alias mas='cd /var/www/masquerade'
-alias ipmg='cd /var/www/webdev02/ipmg'
+alias ipmg='cd /var/www/webdev02/ggpfi-ipmg'
 alias egd='cd /var/www/webdev02/pac/cse-egd'
 
 alias red='cd /var/www/redmine'
