@@ -35,6 +35,7 @@ fi
 . ~/.mysql_credentials
 . ~/.github_credentials
 . ~/.dropbox_credentials
+. ~/.ldap_credentials
 
 # Git Completion with 'g'
 source ~/.git-completion.sh
