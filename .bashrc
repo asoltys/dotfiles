@@ -39,8 +39,7 @@ fi
 
 # Git Completion with 'g'
 source ~/.git-completion.sh
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
-	|| complete -o default -o nospace -F _git g
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
