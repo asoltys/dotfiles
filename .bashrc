@@ -23,7 +23,7 @@ fi
 . ~/.dropbox_credentials
 
 # List dir contents after changing into it
-function cd() {
+function cdl() {
   builtin cd "$*"
   ls
 }
@@ -41,3 +41,4 @@ complete -o bashdefault -o default -o nospace -F _git gits 2>/dev/null
 
 # Bashmarks script for fave'ing directories
 . ~/bin/bashmarks.sh
+export NODE_PATH="/usr/local/lib/node_modules"
