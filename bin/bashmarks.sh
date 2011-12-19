@@ -64,7 +64,7 @@ function p {
 }
 
 # delete bookmark
-function d {
+function dbk {
     check_help $1
     _bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -153,7 +153,7 @@ if [ $ZSH_VERSION ]; then
     compctl -K _compzsh d
 else
     shopt -s progcomp
-    complete -F _comp g
+    complete -F _comp q
     complete -F _comp p
-    complete -F _comp d
+    complete -F _comp dbk
 fi
