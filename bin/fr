@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ack -l --print0 --text $1 | xargs -0 -n 1 sed -i -e "s/$1/$2/g"
