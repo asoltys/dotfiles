@@ -14,7 +14,6 @@ alias dbg='rdebug -c'
 alias rs='bundle exec thin start'
 alias rsd='bundle exec thin start -D'
 alias rsp='bundle exec thin start -e production'
-alias rs3='rails s'
 alias rc='ruby script/console'
 alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
 
@@ -36,9 +35,9 @@ alias ref='git fetch edavis10'
 alias reb='git rebase edavis10/master'
 alias rem='git merge edavis10/master'
 
-alias gtis='rdesktop gtisdev.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x800 -D -K &'
-alias pa='rdesktop pac-apps.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x800 -D -K &'
-alias ad='rdesktop localhost -u "$AVADEPTH_USER" -p "$AVADEPTH_PASSWORD" -g 1280x800 -D -K &'
+alias gtis='rdesktop gtisdev.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x960 -D -K &'
+alias pa='rdesktop pac-apps.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x960 -D -K &'
+alias ad='rdesktop localhost -u "$AVADEPTH_USER" -p "$AVADEPTH_PASSWORD" -g 1280x960 -D -K &'
 
 alias rv='cd app/views'
 alias rl='cd app/views/layouts'
@@ -126,3 +125,4 @@ alias k3='sudo pkill -f localhost:3000'
 alias rd='ssh ircan -N -f -L 3389:184.106.250.111:3389'
 alias krd='sudo pkill -f 3389'
 
+alias ht="sudo cp /etc/hosts /etc/hosts.tmp && sudo mv /etc/hosts.bak /etc/hosts && sudo mv /etc/hosts.tmp /etc/hosts.bak"
