@@ -41,9 +41,6 @@ fi
 source ~/.git-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
 # Bashmarks script for fave'ing directories
 . ~/bin/bashmarks.sh
 export NODE_PATH="/usr/local/lib/node_modules"
