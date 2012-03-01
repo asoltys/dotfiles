@@ -60,8 +60,10 @@ save_function cd rvm_cd
 function cd() {
   rvm_cd "$*"
   ls
-  pwd >> ~/.dirs
-  tail -n 9 ~/.dirs > ~/.tmpdirs; sort ~/.tmpdirs | uniq > ~/.dirs; rm ~/.tmpdirs;
+  grep `pwd` ~/.dirs > /dev/null
+  if [ $? -eq 1 ]; then
+    pwd | cat - ~/.dirs > /tmp/out && head -n 10 /tmp/out > ~/.dirs
+  fi
   for i in `seq 1 9`; do
     alias $i="cd $(head -$i ~/.dirs | tail -n 1)"
   done
