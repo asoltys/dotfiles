@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias ..='cd ..'
 alias more=less
 alias sd=sudo
 
