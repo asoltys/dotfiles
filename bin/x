@@ -1,2 +1,2 @@
-#!/usr/bin/bash
-tar xvfz "@$"
+#!/usr/bin/env bash
+tar xvfz "$@"
