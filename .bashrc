@@ -32,10 +32,22 @@ fi
 # PS1='\t \u@\h $(__git_ps1 "%s"):\W\$ '
 
 # Passwords n' tokens
-. ~/.mysql_credentials
-. ~/.github_credentials
-. ~/.dropbox_credentials
-. ~/.ldap_credentials
+if [ -f ~/.mysql_credentials ]; then
+	. ~/.mysql_credentials
+fi
+
+if [ -f ~/.github_credentials ]; then
+	. ~/.github_credentials
+fi
+
+if [ -f ~/.dropbox_credentials]; then
+	. ~/.dropbox_credentials
+fi
+
+if [ -f ~/.ldap_credentials]; then
+	. ~/.ldap_credentials
+fi
+
 # Git Completion with 'g'
 
 source ~/.git-completion.sh
