@@ -40,11 +40,11 @@ if [ -f ~/.github_credentials ]; then
 	. ~/.github_credentials
 fi
 
-if [ -f ~/.dropbox_credentials]; then
+if [ -f ~/.dropbox_credentials ]; then
 	. ~/.dropbox_credentials
 fi
 
-if [ -f ~/.ldap_credentials]; then
+if [ -f ~/.ldap_credentials ]; then
 	. ~/.ldap_credentials
 fi
 
