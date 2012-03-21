@@ -80,3 +80,5 @@ function cd() {
     alias $i="cd $(head -$i ~/.dirs | tail -n 1)"
   done
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
