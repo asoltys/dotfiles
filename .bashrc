@@ -17,6 +17,7 @@ export PATH
 
 # Load aliases
 . ~/.bash_aliases
+. /etc/profile
 
 # Disable control flow capture
 if [ -t 0 ]; then   # only run if stdin is a terminal
@@ -80,3 +81,4 @@ function cd() {
     alias $i="cd $(head -$i ~/.dirs | tail -n 1)"
   done
 }
+
