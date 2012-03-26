@@ -81,4 +81,3 @@ function cd() {
     alias $i="cd $(head -$i ~/.dirs | tail -n 1)"
   done
 }
-

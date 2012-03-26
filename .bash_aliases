@@ -15,6 +15,7 @@ alias dbg='rdebug -c'
 alias rs='bundle exec thin start'
 alias rsd='bundle exec thin start -D'
 alias rsp='bundle exec thin start -e production'
+alias mig='bundle exec rake db:migrate'
 alias rc='ruby script/console'
 alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
 
