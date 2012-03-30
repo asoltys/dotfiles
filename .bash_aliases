@@ -18,6 +18,7 @@ alias rsp='bundle exec thin start -e production'
 alias mig='bundle exec rake db:migrate'
 alias rc='ruby script/console'
 alias my='mysql -u $MYSQL_USER -p$MYSQL_PASSWORD'
+alias grd='bundle exec guard -n f'
 
 alias ngx='vim /opt/nginx/conf/nginx.conf'
 alias ngxr='sudo /etc/init.d/nginx restart'
