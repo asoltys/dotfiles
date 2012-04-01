@@ -81,3 +81,5 @@ function cd() {
     alias $i="cd $(head -$i ~/.dirs | tail -n 1)"
   done
 }
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
