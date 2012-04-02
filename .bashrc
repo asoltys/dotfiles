@@ -17,7 +17,6 @@ export PATH
 
 # Load aliases
 . ~/.bash_aliases
-. /etc/profile
 
 # Disable control flow capture
 if [ -t 0 ]; then   # only run if stdin is a terminal
