@@ -13,6 +13,9 @@ PATH=$PATH:/usr/local/bin
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
+if [ -d ~/.rvm/bin ]; then
+  PATH=$PATH:~/.rvm/bin
+fi
 export PATH 
 
 # Load aliases
