@@ -133,3 +133,5 @@ alias krd='sudo pkill -f 3389'
 alias ht="sudo cp /etc/hosts /etc/hosts.tmp && sudo mv /etc/hosts.bak /etc/hosts && sudo mv /etc/hosts.tmp /etc/hosts.bak"
 
 alias tag="ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*"
+alias bp="cd /var/www/vanbtc/pos"
+alias om="cd /var/www/om"

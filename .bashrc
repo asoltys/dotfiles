@@ -2,6 +2,7 @@
 set -o vi
 
 export TERM=xterm-256color
+export TERM=xterm-color
 export GREP_OPTIONS='--color=auto'
 export EDITOR=vim
 export HISTCONTROL=erasedups
@@ -12,6 +13,12 @@ PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/bin
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
+fi
+if [ -d /var/www/bitcoin/src ]; then
+  PATH=$PATH:/var/www/bitcoin/src
+fi
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 export PATH 
 
@@ -65,20 +72,6 @@ save_function() {
     local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
     eval "$NEWNAME_FUNC"
   fi
-}
-
-# List dir contents after changing into it
-save_function cd rvm_cd
-function cd() {
-  rvm_cd "$*"
-  ls
-  grep `pwd` ~/.dirs > /dev/null
-  if [ $? -eq 1 ]; then
-    pwd | cat - ~/.dirs > /tmp/out && head -n 10 /tmp/out > ~/.dirs
-  fi
-  for i in `seq 1 9`; do
-    alias $i="cd $(head -$i ~/.dirs | tail -n 1)"
-  done
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
