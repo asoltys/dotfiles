@@ -19,6 +19,8 @@ if [ -d /var/www/bitcoin/src ]; then
 fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
+if [ -d ~/.rvm/bin ]; then
+  PATH=$PATH:~/.rvm/bin
 fi
 export PATH 
 
