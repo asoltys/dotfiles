@@ -10,6 +10,7 @@ export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 
 PATH=$PATH:/usr/sbin
+PATH=$PATH:/home/adam/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
