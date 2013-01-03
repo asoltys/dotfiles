@@ -135,3 +135,6 @@ alias ht="sudo cp /etc/hosts /etc/hosts.tmp && sudo mv /etc/hosts.bak /etc/hosts
 alias tag="ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*"
 alias bp="cd /var/www/vanbtc.ca"
 alias om="cd /var/www/om"
+alias os='rm /home/adam/.ot/server_data/ot.pid'
+alias oc='rm /home/adam/.ot/client_data/ot.pid'
+
