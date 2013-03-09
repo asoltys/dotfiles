@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-openssl aes-256-cbc -in "$@" -kfile ~/.pwd -out "$@.enc" 
+openssl aes-256-cbc -a -in "$@" -kfile ~/.pwd -out "$@.enc" 

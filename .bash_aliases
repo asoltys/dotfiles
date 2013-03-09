@@ -40,7 +40,7 @@ alias rem='git merge edavis10/master'
 
 alias gtis='rdesktop gtisdev.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x960 -D -K &'
 alias pa='rdesktop pac-apps.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x960 -D -K &'
-alias ad='rdesktop localhost -u "$AVADEPTH_USER" -p "$AVADEPTH_PASSWORD" -g 1280x960 -D -K &'
+alias ad='rdesktop localhost -u "$AVADEPTH_USER" -p "$AVADEPTH_PASSWORD" -g 1366x768 -D -K &'
 
 alias rv='cd app/views'
 alias rl='cd app/views/layouts'
@@ -137,4 +137,4 @@ alias bp="cd /var/www/vanbtc.ca"
 alias om="cd /var/www/om"
 alias os='rm /home/adam/.ot/server_data/ot.pid'
 alias oc='rm /home/adam/.ot/client_data/ot.pid'
-
+alias ccbc='cd /var/www/ccbc'

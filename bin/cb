@@ -1,3 +1,2 @@
 #!/bin/bash
-xclip -o -selection="clipboard"
-echo 
+xclip -o -selection clipboard
