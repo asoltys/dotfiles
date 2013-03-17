@@ -138,3 +138,4 @@ alias om="cd /var/www/om"
 alias os='rm /home/adam/.ot/server_data/ot.pid'
 alias oc='rm /home/adam/.ot/client_data/ot.pid'
 alias ccbc='cd /var/www/ccbc'
+alias otw='cd /var/www/otweb'
