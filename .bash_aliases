@@ -40,7 +40,7 @@ alias rem='git merge edavis10/master'
 
 alias gtis='rdesktop gtisdev.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x960 -D -K &'
 alias pa='rdesktop pac-apps.pac.pwgsc.gc.ca -u "$PWGSC_USER" -p "$PWGSC_PASSWORD" -g 1280x960 -D -K &'
-alias ad='rdesktop localhost -u "$AVADEPTH_USER" -p "$AVADEPTH_PASSWORD" -g 1366x768 -D -K &'
+alias ad='rdesktop avadepth.ccg-gcc.gc.ca -u "$AVADEPTH_USER" -p "$AVADEPTH_PASSWORD" -g 1366x768 -D -K &'
 
 alias rv='cd app/views'
 alias rl='cd app/views/layouts'
@@ -133,7 +133,7 @@ alias krd='sudo pkill -f 3389'
 alias ht="sudo cp /etc/hosts /etc/hosts.tmp && sudo mv /etc/hosts.bak /etc/hosts && sudo mv /etc/hosts.tmp /etc/hosts.bak"
 
 alias tag="ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*"
-alias bp="cd /var/www/vanbtc.ca"
+alias bp="cd /var/www/bitcoincoop.org"
 alias om="cd /var/www/om"
 alias os='rm /home/adam/.ot/server_data/ot.pid'
 alias oc='rm /home/adam/.ot/client_data/ot.pid'
