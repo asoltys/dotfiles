@@ -77,7 +77,3 @@ save_function() {
     eval "$NEWNAME_FUNC"
   fi
 }
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

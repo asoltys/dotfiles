@@ -82,7 +82,6 @@ alias ~='cd ~'
 alias h='cd ~'
 alias D='cd ~/Downloads'
 alias cv='cd ~/.vim'
-alias d='cat -n ~/.dirs'
 alias opt='cd /opt'
 alias w='cd /var/www'
 alias cfw='cd /opt/coldfusion9/wwwroot'
@@ -132,7 +131,6 @@ alias krd='sudo pkill -f 3389'
 
 alias ht="sudo cp /etc/hosts /etc/hosts.tmp && sudo mv /etc/hosts.bak /etc/hosts && sudo mv /etc/hosts.tmp /etc/hosts.bak"
 
-alias tag="ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*"
 alias bp="cd /var/www/bitcoincoop.org"
 alias om="cd /var/www/om"
 alias os='rm /home/adam/.ot/server_data/ot.pid'
