@@ -1,20 +1,22 @@
 #!/bin/bash
 sudo apt-get install vim git curl ack-grep exuberant-ctags -yyq
+
 echo "Enter password"
-read password
-openssl aes-256-cbc -d -in ~/.github_credentials.enc -passin $password -out ~/.github_credentials
-openssl aes-256-cbc -d -in ~/.dropbox_credentials.enc -passin $password -out ~/.dropbox_credentials
-openssl aes-256-cbc -d -in ~/.netrc.enc -passin $password -out ~/.netrc
-openssl aes-256-cbc -d -in ~/.filezilla/sitemanager.xml.enc -passin $password -out ~/.filezilla/sitemanager.xml
-openssl aes-256-cbc -d -in ~/.id_rsa.enc -passin $password -out ~/.ssh/id_rsa
-openssl aes-256-cbc -d -in ~/.gitconfig.enc -passin $password -out ~/.gitconfig
+read -s password
+openssl aes-256-cbc -d -in ~/.github_credentials.enc -k $password -out ~/.github_credentials
+openssl aes-256-cbc -d -in ~/.dropbox_credentials.enc -k $password -out ~/.dropbox_credentials
+openssl aes-256-cbc -d -in ~/.netrc.enc -k $password -out ~/.netrc
+openssl aes-256-cbc -d -in ~/.id_rsa.enc -k $password -out ~/.ssh/id_rsa
+openssl aes-256-cbc -d -a -in ~/.gitconfig.enc -k $password -out ~/.gitconfig
+openssl aes-256-cbc -d -in ~/.ssh/.config.enc -k $password -out ~/.ssh/config
 echo "*" > ~/.git/info/exclude
 ln -sf /usr/bin/git ~/bin/gits
-rm ~/.pwd
 
-git clone https://github.com/asoltys/vim ~/.vim
-cd ~/.vim
-git submodule update --init
+if [ ! -d ~/.vim ]; then
+  git clone https://github.com/asoltys/vim ~/.vim
+  cd ~/.vim
+  git submodule update --init
+fi
 
 echo "Installation complete"
 exit
