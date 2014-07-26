@@ -12,5 +12,10 @@ echo "*" > ~/.git/info/exclude
 ln -s /usr/bin/git ~/bin/gits
 rm ~/.pwd
 
+sudo apt-get install vim git curl -yyq
+git clone https://github.com/asoltys/vim ~/.vim
+cd ~/.vim
+git submodule update --init
+
 echo "Installation complete"
 exit
