@@ -18,5 +18,7 @@ if [ ! -d ~/.vim ]; then
   git submodule update --init
 fi
 
+source ~/.bashrc
+
 echo "Installation complete"
 exit
