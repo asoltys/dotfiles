@@ -51,3 +51,9 @@ fi
 # Git Completion with 'g'
 source ~/.git-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/adam/google-cloud-sdk/path.bash.inc'
+
+# The next line enables bash completion for gcloud.
+source '/home/adam/google-cloud-sdk/completion.bash.inc'

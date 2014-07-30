@@ -11,6 +11,7 @@ openssl aes-256-cbc -d -a -in ~/.gitconfig.enc -k $password -out ~/.gitconfig
 openssl aes-256-cbc -d -in ~/.ssh/.config.enc -k $password -out ~/.ssh/config
 echo "*" > ~/.git/info/exclude
 ln -sf /usr/bin/git ~/bin/gits
+chmod 600 ~/.ssh/id_rsa
 
 if [ ! -d ~/.vim ]; then
   git clone https://github.com/asoltys/vim ~/.vim
