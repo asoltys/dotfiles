@@ -48,3 +48,4 @@ alias lsl='ls -Flh --color --group-directories-first'
 alias bp="cd /var/www/bitcoincoop.org"
 alias ccbc='cd /var/www/ccbc'
 alias pos="cd /var/www/coinos"
+alias farm="cd /var/www/karmafarma.ca"

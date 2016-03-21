@@ -8,11 +8,12 @@ export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
-export NODE_PATH="/usr/local/lib/node_modules"
+export NODE_PATH="$(npm root -g)"
 
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/home/adam/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
+PATH="$HOME/.node_modules/bin:$PATH"
 
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
@@ -25,6 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 if [ -d ~/.rvm/bin ]; then
   PATH=$PATH:~/.rvm/bin
+fi
+if [ -d /usr/local/go/bin ]; then
+  PATH=$PATH:/usr/local/go/bin
+  GOPATH=~/gocode
 fi
 export PATH 
 
