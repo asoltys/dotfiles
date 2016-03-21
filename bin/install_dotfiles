@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt-get install vim git curl ack-grep exuberant-ctags -yyq
+sudo apt-get install ruby vim git curl ack-grep exuberant-ctags -yyq
+rsync -ar ~/dotfiles/ ~/
 
 echo "Enter password"
 read -s password
