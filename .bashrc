@@ -1,9 +1,6 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
-export TERM=xterm-256color
-export TERM=xterm-color
-export GREP_OPTIONS='--color=auto'
 export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
@@ -54,11 +51,6 @@ if [ -f ~/.dropbox_credentials ]; then
 fi
 
 # Git Completion with 'g'
-source ~/.git-completion.sh
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/adam/google-cloud-sdk/path.bash.inc'
-
-# The next line enables bash completion for gcloud.
-source '/home/adam/google-cloud-sdk/completion.bash.inc'
+. ~/.git-completion.sh
+. ~/hub-completion.sh
+complete -o bashdefault -o default -o nospace -F _hub g 2>/dev/null
