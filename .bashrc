@@ -5,12 +5,16 @@ export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
-export NODE_PATH="$(npm root -g)"
 
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/home/adam/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
-PATH="$HOME/.node_modules/bin:$PATH"
+
+NPM_PACKAGES="$HOME/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
+unset MANPATH  
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
@@ -52,5 +56,5 @@ fi
 
 # Git Completion with 'g'
 . ~/.git-completion.sh
-. ~/hub-completion.sh
-complete -o bashdefault -o default -o nospace -F _hub g 2>/dev/null
+. ~/.hub-completion.sh
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
