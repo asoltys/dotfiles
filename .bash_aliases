@@ -13,6 +13,7 @@ alias hist='history'
 
 alias ngxr='sudo /etc/init.d/nginx restart'
 
+alias g='hub'
 alias gs='git status'
 alias gp='git push'
 alias gfp='git ftp push'

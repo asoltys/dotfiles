@@ -3,6 +3,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 let mapleader = ","
+let g:ctrlp_map = '<c-f>'
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 map ,cd :cd %:p:h<CR>
 map ,f :let g:fuzzy_roots=[getcwd()]<CR>:ruby @finder=nil<CR>
