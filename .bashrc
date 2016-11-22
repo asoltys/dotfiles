@@ -5,7 +5,6 @@ export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
-
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/home/adam/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
@@ -30,8 +29,22 @@ if [ -d ~/.rvm/bin ]; then
 fi
 if [ -d /usr/local/go/bin ]; then
   PATH=$PATH:/usr/local/go/bin
-  GOPATH=~/gocode
 fi
+if [ -d ~/gocode/bin ]; then
+  PATH=$PATH:~/gocode/bin
+  export GOPATH=~/gocode
+fi
+
+if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+fi
+
+if [ -d ~/Android/Sdk ]; then
+  export ANDROID_HOME=$HOME/Android/Sdk
+  PATH=$PATH:$ANDROID_HOME/tools
+  PATH=$PATH:$ANDROID_HOME/platform-tools
+fi
+
 export PATH 
 
 . ~/.bash_aliases
