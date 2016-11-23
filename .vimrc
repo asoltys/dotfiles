@@ -92,9 +92,14 @@ set t_Co=256
 set background=light
 set guifont=DejaVu\ Sans\ Mono\ 12
 if has('gui_running')
-  colorscheme solarized
+  colorscheme base16-default-dark
 else
   colorscheme ir_black
+endif
+
+if filereadable(expand("~/.vimrc_background"))
+let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
 " BACKUPS
