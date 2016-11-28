@@ -18,6 +18,7 @@ if [ ! -d ~/.vim ]; then
   git clone https://github.com/asoltys/vim ~/.vim
   cd ~/.vim
   git submodule update --init
+  cp --remove-destination ~/.vim/.vimrc ~
 fi
 
 source ~/.bashrc
