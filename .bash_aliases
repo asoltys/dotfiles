@@ -13,6 +13,7 @@ alias hist='history'
 
 alias ngxr='sudo /etc/init.d/nginx restart'
 
+alias g='hub'
 alias gs='git status'
 alias gp='git push'
 alias gfp='git ftp push'
@@ -46,6 +47,5 @@ alias ls='ls -F --color --group-directories-first'
 alias lsa='ls -Flah --color --group-directories-first'
 alias lsl='ls -Flh --color --group-directories-first'
 alias bp="cd /var/www/bitcoincoop.org"
-alias ccbc='cd /var/www/ccbc'
-alias pos="cd /var/www/coinos"
-alias farm="cd /var/www/karmafarma.ca"
+alias pos="cd ~/coinos.io"
+alias ass="cd ~/assignment"

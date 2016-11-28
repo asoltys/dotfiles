@@ -1,19 +1,19 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
-export TERM=xterm-256color
-export TERM=xterm-color
-export GREP_OPTIONS='--color=auto'
 export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
-export NODE_PATH="$(npm root -g)"
-
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/home/adam/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
-PATH="$HOME/.node_modules/bin:$PATH"
+
+NPM_PACKAGES="$HOME/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
+unset MANPATH  
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
@@ -29,11 +29,29 @@ if [ -d ~/.rvm/bin ]; then
 fi
 if [ -d /usr/local/go/bin ]; then
   PATH=$PATH:/usr/local/go/bin
-  GOPATH=~/gocode
 fi
+if [ -d ~/gocode/bin ]; then
+  PATH=$PATH:~/gocode/bin
+  export GOPATH=~/gocode
+fi
+
+if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+fi
+
+if [ -d ~/Android/Sdk ]; then
+  export ANDROID_HOME=$HOME/Android/Sdk
+  PATH=$PATH:$ANDROID_HOME/tools
+  PATH=$PATH:$ANDROID_HOME/platform-tools
+fi
+
 export PATH 
 
-. ~/.bash_aliases
+
+# Pretty colors
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+force_color_prompt=yes
 
 # Disable control flow capture
 if [ -t 0 ]; then   # only run if stdin is a terminal
@@ -54,11 +72,50 @@ if [ -f ~/.dropbox_credentials ]; then
 fi
 
 # Git Completion with 'g'
-source ~/.git-completion.sh
+. ~/.git-completion.sh
+. ~/.hub-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/adam/google-cloud-sdk/path.bash.inc'
+# Path to the bash it configuration
+export BASH_IT="/home/adam/.bash_it"
 
-# The next line enables bash completion for gcloud.
-source '/home/adam/google-cloud-sdk/completion.bash.inc'
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='pete'
+
+# (Advanced): Change this to the name of your remote repo if you
+# cloned bash-it with a remote other than origin such as `bash-it`.
+# export BASH_IT_REMOTE='bash-it'
+
+# Your place for hosting Git repos. I use this for private repos.
+export GIT_HOSTING='git@git.domain.com'
+
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Change this to your console based IRC client of choice.
+export IRC_CLIENT='irssi'
+
+# Set this to the command you use for todo.txt-cli
+export TODO="t"
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=false
+
+# Set Xterm/screen/Tmux title with only a short hostname.
+# Unomment this (or set SHORT_HOSTNAME to something else),
+# Will otherwise fall back on $HOSTNAME.
+export SHORT_HOSTNAME=$(hostname -s)
+
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/djl/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
+
+# (Advanced): Uncomment this to make Bash-it reload itself automatically
+# after enabling or disabling aliases, plugins, and completions.
+export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
+
+# Load Bash It
+source $BASH_IT/bash_it.sh
+
+. ~/.bash_aliases
