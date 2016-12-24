@@ -49,3 +49,6 @@ alias lsl='ls -Flh --color --group-directories-first'
 alias bp="cd /var/www/bitcoincoop.org"
 alias pos="cd ~/coinos.io"
 alias ass="cd ~/assignment"
+alias n="nautilus"
+alias pops="cd ~/pops"
+alias r="npm run dev"
