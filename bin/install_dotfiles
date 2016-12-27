@@ -37,6 +37,7 @@ if [ ! -d ~/.config/base16-shell ]; then
 fi
 
 source ~/.bashrc
+rm -rf ~/dotfiles
 
 echo "Installation complete"
 exit
