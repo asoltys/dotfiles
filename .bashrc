@@ -76,9 +76,6 @@ fi
 . ~/.hub-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
-# Path to the bash it configuration
-export BASH_IT="~/.bash_it"
-
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
 export BASH_IT_THEME='pete'
@@ -114,9 +111,6 @@ export SHORT_HOSTNAME=$(hostname -s)
 # (Advanced): Uncomment this to make Bash-it reload itself automatically
 # after enabling or disabling aliases, plugins, and completions.
 export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
-
-# Load Bash It
-source $BASH_IT/bash_it.sh
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
