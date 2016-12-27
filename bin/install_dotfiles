@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install ruby vim git curl ack-grep exuberant-ctags -yyq
+sudo apt-get install ruby vim git curl ack-grep exuberant-ctags golang -yyq
 rsync -ar ~/dotfiles/ ~/
 
 echo "Enter password"
@@ -27,7 +27,7 @@ if [ ! -d ~/.hub ]; then
   make install prefix=/usr/local
 fi
 
-if [ ! -d ~/.bash-it ]; then
+if [ ! -d ~/.bash_it ]; then
   git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
   ~/.bash_it/install.sh --silent --no-modify-config
 fi
