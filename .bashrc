@@ -6,7 +6,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 PATH=$PATH:/usr/sbin
-PATH=$PATH:/home/adam/jre1.7.0_09/bin$
+PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
 
 NPM_PACKAGES="$HOME/.npm-packages"
@@ -77,7 +77,7 @@ fi
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 # Path to the bash it configuration
-export BASH_IT="/home/adam/.bash_it"
+export BASH_IT="~/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
