@@ -5,6 +5,9 @@ if [[ ! -z "$DISPLAY" ]]; then
   sudo apt-get install wmctrl vim-gtk -yyq
 fi
 
+wget https://nodejs.org/dist/v7.3.0/node-v7.3.0-linux-x64.tar.xz
+sudo tar -C /usr/local --strip-components 1 -xJf node-v7.3.0-linux-x64.tar.xz
+
 sudo gem install bundler
 rsync -ar ~/dotfiles/ ~/
 
@@ -23,6 +26,7 @@ chmod 600 ~/.ssh/id_rsa
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts 
 curl -fLo "DejaVu Sans Mono for Powerline Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete%20Mono.ttf
+
 
 if [ ! -d ~/.vim ]; then
   git clone https://github.com/asoltys/vim ~/.vim
