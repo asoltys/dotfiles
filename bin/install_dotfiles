@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt-get install ruby vim git curl ack-grep exuberant-ctags golang -yyq
+sudo apt-get install ruby ruby-dev vim git curl ack-grep exuberant-ctags golang -yyq
+sudo gem install bundler
 rsync -ar ~/dotfiles/ ~/
 
 echo "Enter password"
