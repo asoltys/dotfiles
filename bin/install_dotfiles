@@ -48,6 +48,8 @@ if [ ! -d ~/.config/base16-shell ]; then
 fi
 
 source ~/.bashrc
+bash-it disable alias general
+
 rm -rf ~/dotfiles
 
 echo "Installation complete"
