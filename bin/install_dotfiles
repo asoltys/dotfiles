@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "$(whoami) ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+
 sudo apt-get install ruby ruby-dev vim git curl ack-grep exuberant-ctags golang -yyq
 
 if [[ ! -z "$DISPLAY" ]]; then
