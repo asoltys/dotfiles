@@ -1,5 +1,10 @@
 #!/bin/bash
 sudo apt-get install ruby ruby-dev vim git curl ack-grep exuberant-ctags golang -yyq
+
+if [[ ! -z "$DISPLAY" ]]; then
+  sudo apt-get install wmctrl vim-gtk -yyq
+fi
+
 sudo gem install bundler
 rsync -ar ~/dotfiles/ ~/
 
@@ -29,7 +34,7 @@ fi
 if [ ! -d ~/.hub ]; then
   git clone https://github.com/github/hub ~/.hub
   cd ~/.hub
-  make install prefix=/usr/local
+  sudo make install prefix=/usr/local
 fi
 
 if [ ! -d ~/.bash_it ]; then
@@ -39,6 +44,7 @@ fi
 
 if [ ! -d ~/.config/base16-shell ]; then
   git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+  ~/.config/base16-shell/profile_helper.sh
 fi
 
 source ~/.bashrc
