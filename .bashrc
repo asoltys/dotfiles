@@ -6,7 +6,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 PATH=$PATH:/usr/sbin
-PATH=$PATH:/home/adam/jre1.7.0_09/bin$
+PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
 
 NPM_PACKAGES="$HOME/.npm-packages"
@@ -77,7 +77,7 @@ fi
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 # Path to the bash it configuration
-export BASH_IT="/home/adam/.bash_it"
+export BASH_IT="/home/$(whoami)/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -120,7 +120,7 @@ source $BASH_IT/bash_it.sh
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-base16_default-dark
 
 . ~/.bash_aliases
 
+eval "`dircolors ~/.dircolors`"
