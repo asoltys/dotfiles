@@ -7,8 +7,8 @@ if [[ ! -z "$DISPLAY" ]]; then
   sudo apt-get install wmctrl vim-gtk -yyq
 fi
 
-wget https://nodejs.org/dist/v7.3.0/node-v7.3.0-linux-x64.tar.xz
-sudo tar -C /usr/local --strip-components 1 -xJf node-v7.3.0-linux-x64.tar.xz
+wget https://nodejs.org/dist/v7.4.0/node-v7.4.0-linux-x64.tar.xz
+sudo tar -C /usr/local --strip-components 1 -xJf node-v7.4.0-linux-x64.tar.xz
 
 sudo gem install bundler
 rsync -ar ~/dotfiles/ ~/
