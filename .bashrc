@@ -124,3 +124,4 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 . ~/.bash_aliases
 
 eval "`dircolors ~/.dircolors`"
+source /usr/share/autojump/autojump.bash
