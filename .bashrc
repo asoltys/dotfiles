@@ -32,6 +32,7 @@ if [ -d /usr/local/go/bin ]; then
 fi
 if [ -d ~/gocode/bin ]; then
   PATH=$PATH:~/gocode/bin
+  export GOROOT=~/gocode
   export GOPATH=~/gocode
 fi
 
