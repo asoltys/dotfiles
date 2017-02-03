@@ -39,9 +39,10 @@ if [ ! -d ~/.vim ]; then
 fi
 
 if [ ! -d ~/.hub ]; then
-  git clone https://github.com/github/hub ~/.hub
-  cd ~/.hub
-  sudo make install prefix=/usr/local
+  wget https://github.com/github/hub/releases/download/v2.3.0-pre8/hub-linux-amd64-2.3.0-pre8.tgz
+  tar xvfz hub-linux-amd64-2.3.0-pre8.tgz
+  sudo hub-linux-amd64-2.3.0-pre8/install
+  rm -rf hub-linux-amd64-2.3.0-pre8
 fi
 
 if [ ! -d ~/.bash_it ]; then
