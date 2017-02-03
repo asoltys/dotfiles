@@ -54,3 +54,6 @@ alias pops="cd ~/pops"
 alias r="npm run dev"
 alias ad="cd /var/www/pops/application/themes/usaid"
 alias egd="cd ~/egdbooking_v2"
+alias vf='vim $(fzf)'
+alias cf='cat $(fzf)'
+alias gf='cd $(fzf)'

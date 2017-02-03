@@ -125,3 +125,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 . ~/.bash_aliases
 
 eval "`dircolors ~/.dircolors`"
+source /usr/share/autojump/autojump.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+function ssh () {/usr/bin/ssh -t $@ "tmux attach || tmux new";}
