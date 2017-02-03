@@ -77,7 +77,7 @@ fi
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 # Path to the bash it configuration
-export BASH_IT="/home/$(whoami)/.bash_it"
+export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
