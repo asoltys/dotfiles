@@ -53,6 +53,11 @@ if [ ! -d ~/.config/base16-shell ]; then
   ~/.config/base16-shell/profile_helper.sh
 fi
 
+if [ ! -d ~/.fzf]; then
+  git clone --depth=1 https://github.com/junegunn/fzf .fzf
+  ~/.fzf/install
+fi
+
 source ~/.bashrc
 bash-it disable alias general
 
