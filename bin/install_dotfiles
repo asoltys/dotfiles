@@ -15,6 +15,7 @@ rsync -ar ~/dotfiles/ ~/
 
 echo "Enter password"
 read -s password
+openssl aes-256-cbc -d -in ~/.git-credentials.enc -k $password -out ~/.git-credentials
 openssl aes-256-cbc -d -in ~/.github_credentials.enc -k $password -out ~/.github_credentials
 openssl aes-256-cbc -d -in ~/.dropbox_credentials.enc -k $password -out ~/.dropbox_credentials
 openssl aes-256-cbc -d -in ~/.netrc.enc -k $password -out ~/.netrc
