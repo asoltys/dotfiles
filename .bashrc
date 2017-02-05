@@ -1,6 +1,10 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
 export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
