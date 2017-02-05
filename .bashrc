@@ -86,7 +86,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 eval "`dircolors ~/.dircolors`"
 source /usr/share/autojump/autojump.bash
 
-#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='pt -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
