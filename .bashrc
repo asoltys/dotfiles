@@ -85,10 +85,30 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 eval "`dircolors ~/.dircolors`"
 
+[ -f ~/z.sh ] && source ~/z.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_COMMAND='pt -g ""'
+export FZF_DEFAULT_COMMAND='pt --hidden -g ""'
+export FZF_DEFAULT_OPTS=""
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
+export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
+export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
 fi
+
+unalias z
+z() {
+  if [[ -z "$*" ]]; then
+    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
+  else
+    _last_z_args="$@"
+    _z "$@"
+  fi
+}
+
+zz() {
+  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q $_last_z_args)"
+}
