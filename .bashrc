@@ -1,10 +1,6 @@
 # Use vi mode instead of Emacs for readline
 set -o vi
 
-if command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-fi
-
 export EDITOR=vim
 export HISTCONTROL=erasedups
 export HISTSIZE=9999
@@ -88,9 +84,11 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 . ~/.bash_aliases
 
 eval "`dircolors ~/.dircolors`"
-source /usr/share/autojump/autojump.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='pt -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+fi
