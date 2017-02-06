@@ -108,6 +108,7 @@ source "$fasd_cache"
 unset fasd_cache
 
 unalias f
+unalias s
 unalias zz
 zz() {
   local dir
