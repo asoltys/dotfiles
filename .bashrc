@@ -127,3 +127,5 @@ v() {
 fh() {
   [ "$FZF_HIDDEN" = "--hidden" ] && export FZF_HIDDEN="" || export FZF_HIDDEN="--hidden"
 }
+
+bind -x '"\C-f": "fzf-file-widget"'
