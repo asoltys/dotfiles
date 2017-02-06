@@ -88,7 +88,7 @@ eval "`dircolors ~/.dircolors`"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
 export FZF_DEFAULT_COMMAND="pt $FZF_HIDDEN -g ''"
-export FZF_DEFAULT_OPTS=""
+export FZF_DEFAULT_OPTS="--reverse --height 80%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
@@ -107,7 +107,6 @@ fi
 source "$fasd_cache"
 unset fasd_cache
 
-unalias f
 unalias s
 unalias zz
 zz() {
@@ -120,7 +119,7 @@ v() {
   if [ -f "$1" ]; then
     vim $1
   else
-    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+    file="$(fasd -Rfl -B viminfo "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
   fi
 }
 
