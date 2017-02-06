@@ -85,7 +85,6 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 eval "`dircolors ~/.dircolors`"
 
-unalias f
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
 export FZF_DEFAULT_COMMAND="pt $FZF_HIDDEN -g ''"
@@ -108,6 +107,7 @@ fi
 source "$fasd_cache"
 unset fasd_cache
 
+unalias f
 unalias zz
 zz() {
   local dir
@@ -115,9 +115,12 @@ zz() {
 }
 
 v() {
-local file
-  [ -f $1 ] && vim $1
-  file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+  local file
+  if [ -f "$1" ]; then
+    vim $1
+  else
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+  fi
 }
 
 fh() {
