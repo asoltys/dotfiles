@@ -1,1 +1,1 @@
-/home/adam/.vim/.vimrc
+.vim/.vimrc
