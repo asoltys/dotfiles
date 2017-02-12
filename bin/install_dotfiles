@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "$(whoami) ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-sudo apt-get install ruby ruby-dev vim git curl ack-grep exuberant-ctags golang tree xclip -yy
+sudo apt-get install vim git curl ack-grep exuberant-ctags golang tree xclip -yy
 
 if [[ ! -z "$DISPLAY" ]]; then
   sudo apt-get install wmctrl vim-gtk -yyq
@@ -10,7 +10,6 @@ fi
 wget https://nodejs.org/dist/v7.4.0/node-v7.4.0-linux-x64.tar.xz
 sudo tar -C /usr/local --strip-components 1 -xJf node-v7.4.0-linux-x64.tar.xz
 
-sudo gem install bundler
 rsync -ar ~/dotfiles/ ~/
 
 echo "Enter password"
