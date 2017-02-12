@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "$(whoami) ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-sudo apt-get install ruby ruby-dev vim git curl ack-grep exuberant-ctags golang tree -yy
+sudo apt-get install ruby ruby-dev vim git curl ack-grep exuberant-ctags golang tree xclip -yy
 
 if [[ ! -z "$DISPLAY" ]]; then
   sudo apt-get install wmctrl vim-gtk -yyq
