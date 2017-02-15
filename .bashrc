@@ -119,7 +119,15 @@ v() {
   if [ -f "$1" ]; then
     vim $1
   else
-    file="$(fasd -Rfl -B viminfo "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+    if [ $# -gt 0 ]; then
+      local f=$(fasd -Rfl -b viminfo "$1" -1)
+      echo $f
+      if [ -f $f ]; then
+        vim $f
+      fi
+    else
+      file="$(fasd -Rfl -b viminfo "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+    fi
   fi
 }
 
