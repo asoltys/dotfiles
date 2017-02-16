@@ -5,6 +5,7 @@ export EDITOR=vim
 export HISTCONTROL=ignoredups:erasedups:ignorespace
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 PATH=$PATH:/usr/sbin
 PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
