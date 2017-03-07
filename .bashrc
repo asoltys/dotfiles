@@ -96,7 +96,7 @@ export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
 export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
-if [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
+if [ -n "$SSH_CLIENT" ] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
 fi
 

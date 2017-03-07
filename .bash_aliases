@@ -58,3 +58,4 @@ alias egd="cd ~/egdbooking_v2"
 alias vf='vim $(fzf)'
 alias cf='cat $(fzf)'
 alias gf='cd $(fzf)'
+alias tm='tmux new-session -A -s main'
