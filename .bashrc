@@ -98,7 +98,7 @@ export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
 export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
 if [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+  [[ ! $TERM =~ screen ]]  && [[ "$SSH_CONNECTION" != "" ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
 fi
 
 fasd_cache="$HOME/.fasd-init-bash"
