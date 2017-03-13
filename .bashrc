@@ -91,14 +91,13 @@ export FZF_HIDDEN="--hidden"
 export FZF_DEFAULT_COMMAND="pt $FZF_HIDDEN -g ''"
 export FZF_DEFAULT_OPTS="--reverse --height 80%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
 export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
 export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
-if [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]]  && [[ "$SSH_CONNECTION" != "" ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+if [ -n "$SSH_CLIENT" ] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
 fi
 
 fasd_cache="$HOME/.fasd-init-bash"
