@@ -16,6 +16,9 @@ unset MANPATH
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
+if [ -x "$(command -v yarn)" ]; then
+  PATH="$PATH:$(yarn global bin)"
+fi
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
