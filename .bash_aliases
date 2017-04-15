@@ -53,6 +53,7 @@ alias ass="cd ~/assignment"
 alias n="nautilus"
 alias pops="cd ~/pops"
 alias r="npm run dev"
+alias st="npm start"
 alias ad="cd /var/www/pops/packages/usaid"
 alias egd="cd ~/egdbooking_v2"
 alias vf='vim $(fzf)'
