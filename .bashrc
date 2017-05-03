@@ -6,6 +6,7 @@ export HISTCONTROL=ignoredups:erasedups:ignorespace
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export DISPLAY=:0
 PATH=$PATH:/usr/sbin
 PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
@@ -16,6 +17,9 @@ unset MANPATH
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
+if [ -x "$(command -v yarn)" ]; then
+  PATH="$PATH:$(yarn global bin)"
+fi
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
