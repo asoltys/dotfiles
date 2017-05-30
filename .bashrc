@@ -1,4 +1,5 @@
 # Use vi mode instead of Emacs for readline
+[[ $- == *i* ]] || return
 set -o vi
 shopt -s histappend
 export EDITOR=vim
