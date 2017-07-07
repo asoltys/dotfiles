@@ -35,7 +35,7 @@ alias grc='git rebase --continue'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gb='git branch -a'
-alias gog='git log'
+alias gog='git lg'
 alias gi='git rebase HEAD~10 -i'
 
 alias ~='cd ~'
