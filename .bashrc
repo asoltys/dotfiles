@@ -8,6 +8,9 @@ export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export DISPLAY=:0
+export LESS="--RAW-CONTROL-CHARS"
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
+
 PATH=$PATH:/usr/sbin
 PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
@@ -93,7 +96,7 @@ eval "`dircolors ~/.dircolors`"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
-export FZF_DEFAULT_COMMAND="pt $FZF_HIDDEN -g ''"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--reverse --height 80%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
@@ -141,3 +144,14 @@ fh() {
 }
 
 bind -x '"\C-f": "fzf-file-widget"'
+
+# added by Miniconda3 4.3.21 installer
+export PATH="/home/adam/miniconda3/bin:$PATH"
+
+fix() { 
+  vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs ) 
+}
+
+dsf() { 
+  git diff --no-index --color "$@" | diff-so-fancy 
+}
