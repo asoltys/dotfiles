@@ -43,6 +43,8 @@ if [ -d ~/gocode/bin ]; then
   PATH=$PATH:~/gocode/bin
   export GOROOT=~/gocode
   export GOPATH=~/gocode
+else
+  export GOPATH=~/go
 fi
 
 if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
@@ -155,3 +157,5 @@ fix() {
 dsf() { 
   git diff --no-index --color "$@" | diff-so-fancy 
 }
+
+fortune | cowsay -f $(node -e "var c='$(cowsay -l)'.split('  ');console.log(c[Math.floor(Math.random()*c.length)])") | lolcatjs --seed 0 --spread 1.0

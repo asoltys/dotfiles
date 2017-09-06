@@ -4,7 +4,7 @@
 [core]
 	autocrlf = input
 	editor = vim -c start
-	excludesfile = /home/adam/.config/git/ignore
+	excludesfile = /home/adam/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	whitespace = cr-at-eol
 [diff]
