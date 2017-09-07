@@ -1,4 +1,5 @@
 # Use vi mode instead of Emacs for readline
+[[ $- == *i* ]] || return
 set -o vi
 shopt -s histappend
 export EDITOR=vim
@@ -7,6 +8,9 @@ export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export DISPLAY=:0
+export LESS="--RAW-CONTROL-CHARS"
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
+
 PATH=$PATH:/usr/sbin
 PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
@@ -39,6 +43,8 @@ if [ -d ~/gocode/bin ]; then
   PATH=$PATH:~/gocode/bin
   export GOROOT=~/gocode
   export GOPATH=~/gocode
+else
+  export GOPATH=~/go
 fi
 
 if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
@@ -92,7 +98,7 @@ eval "`dircolors ~/.dircolors`"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
-export FZF_DEFAULT_COMMAND="pt $FZF_HIDDEN -g ''"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--reverse --height 80%"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
@@ -100,7 +106,7 @@ export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
 export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
-if [ -n "$SSH_CLIENT" ] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
+if [[ -n "$SSH_CLIENT" ]] && [[ -n "$SSH_TTY" ]] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
 fi
 
@@ -146,3 +152,15 @@ if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc' ]; then sour
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/completion.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/completion.bash.inc'; fi
+# added by Miniconda3 4.3.21 installer
+export PATH="/home/adam/miniconda3/bin:$PATH"
+
+fix() { 
+  vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs ) 
+}
+
+dsf() { 
+  git diff --no-index --color "$@" | diff-so-fancy 
+}
+
+fortune | cowsay -f $(node -e "var c='$(cowsay -l)'.split('  ');console.log(c[Math.floor(Math.random()*c.length)])") | lolcatjs --seed 0 --spread 1.0

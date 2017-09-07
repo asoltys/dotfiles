@@ -34,3 +34,9 @@ Icon?
 Thumbs.db
 tags
 node_modules
+.vscode
+bin
+obj
+Debug
+*.~lock.*
+*.tags

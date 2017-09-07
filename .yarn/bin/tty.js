@@ -1,0 +1,1 @@
+../../.config/yarn/global/node_modules/tty.js/bin/tty.js

@@ -1,0 +1,39 @@
+[user]
+	name = Adam Soltys
+	email = asoltys@gmail.com
+[core]
+	autocrlf = input
+	editor = vim -c start
+	excludesfile = /home/adam/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	whitespace = cr-at-eol
+[diff]
+	tool = meld
+[branch]
+	autosetuprebase = always
+[alias]
+  cm = commit
+  co = checkout
+  br = branch
+  rb = rebase
+  cp = cherry-pick
+  p = push
+  l = pull
+  f = fetch
+  c = clone
+  lg = log --graph --color=always --format='%C(auto)%h%d %s %C(blue)%an %C(bold)%C(black)%cr'
+	ctags = !.git/hooks/ctags
+[color]
+	ui = always
+[hub]
+	protocol = https
+[http]
+	postBuffer = 524288000
+[push]
+	default = current
+[credential]
+	helper = store
+[init]
+	templatedir = ~/.git_template
+[include]
+  path = ~/.gitconfig_secrets
