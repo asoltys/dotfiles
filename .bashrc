@@ -162,5 +162,3 @@ fix() {
 dsf() { 
   git diff --no-index --color "$@" | diff-so-fancy 
 }
-
-fortune | cowsay -f $(node -e "var c='$(cowsay -l)'.split('  ');console.log(c[Math.floor(Math.random()*c.length)])") | lolcatjs --seed 0 --spread 1.0
