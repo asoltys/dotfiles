@@ -38,4 +38,5 @@ node_modules
 bin
 obj
 Debug
-*.lock.*
+*.~lock.*
+*.tags

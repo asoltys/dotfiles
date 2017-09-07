@@ -43,6 +43,8 @@ if [ -d ~/gocode/bin ]; then
   PATH=$PATH:~/gocode/bin
   export GOROOT=~/gocode
   export GOPATH=~/gocode
+else
+  export GOPATH=~/go
 fi
 
 if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
@@ -145,6 +147,11 @@ fh() {
 
 bind -x '"\C-f": "fzf-file-widget"'
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/completion.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/completion.bash.inc'; fi
 # added by Miniconda3 4.3.21 installer
 export PATH="/home/adam/miniconda3/bin:$PATH"
 
