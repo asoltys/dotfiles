@@ -33,7 +33,5 @@
 	default = current
 [credential]
 	helper = store
-[init]
-	templatedir = ~/.git_template
 [include]
   path = ~/.gitconfig_secrets
