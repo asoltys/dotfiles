@@ -57,6 +57,7 @@ if [ -d ~/Android/Sdk ]; then
   PATH=$PATH:$ANDROID_HOME/platform-tools
 fi
 
+# Strip duplicate paths
 if [ -n "$PATH" ]; then
   old_PATH=$PATH:; PATH=
   while [ -n "$old_PATH" ]; do

@@ -1,14 +1,14 @@
 #!/bin/bash
 echo "$(whoami) ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-sudo apt-get install vim git curl ack-grep exuberant-ctags golang tree xclip -yy
+sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip -yy
 
 if [[ ! -z "$DISPLAY" ]]; then
   sudo apt-get install wmctrl vim-gtk -yyq
 fi
 
-wget https://nodejs.org/dist/v7.4.0/node-v7.4.0-linux-x64.tar.xz
-sudo tar -C /usr/local --strip-components 1 -xJf node-v7.4.0-linux-x64.tar.xz
+wget https://nodejs.org/dist/v8.6.0/node-v8.6.0-linux-x64.tar.xz
+sudo tar -C /usr/local --strip-components 1 -xJf node-v8.6.0-linux-x64.tar.xz
 
 rsync -ar ~/dotfiles/ ~/
 
@@ -38,10 +38,10 @@ if [ ! -d ~/.vim ]; then
 fi
 
 if [ ! -d ~/.hub ]; then
-  wget https://github.com/github/hub/releases/download/v2.3.0-pre8/hub-linux-amd64-2.3.0-pre8.tgz
-  tar xvfz hub-linux-amd64-2.3.0-pre8.tgz
-  sudo hub-linux-amd64-2.3.0-pre8/install
-  rm -rf hub-linux-amd64-2.3.0-pre8
+  wget https://github.com/github/hub/releases/download/v2.3.0-pre10/hub-linux-amd64-2.3.0-pre10.tgz 
+  tar xvfz hub-linux-amd64-2.3.0-pre10.tgz
+  sudo hub-linux-amd64-2.3.0-pre10/install
+  rm -rf hub-linux-amd64-2.3.0-pre10
 fi
 
 if [ ! -d ~/.config/base16-shell ]; then
