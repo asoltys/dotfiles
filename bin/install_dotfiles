@@ -2,6 +2,8 @@
 echo "$(whoami) ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip -yy
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 if [[ ! -z "$DISPLAY" ]]; then
   sudo apt-get install wmctrl vim-gtk -yyq
@@ -46,7 +48,8 @@ fi
 
 if [ ! -d ~/.config/base16-shell ]; then
   git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-  ~/.config/base16-shell/profile_helper.sh
+  source ~/.config/base16-shell/profile_helper.sh
+  base16_default-dark
 fi
 
 git submodule update --init
