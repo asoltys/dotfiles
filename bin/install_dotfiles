@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "$(whoami) ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip -yy
+sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip build-essential cmake python-dev python3-dev -yy
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
@@ -37,6 +37,8 @@ if [ ! -d ~/.vim ]; then
   cd ~/.vim
   git submodule update --init
   ln s ~/.vim/.vimrc ~/.vimrc
+  cd ~/.vim/bundle/YouCompleteMe
+  ./install.py --tern-completer
 fi
 
 if [ ! -d ~/.hub ]; then
