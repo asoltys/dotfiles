@@ -4,3 +4,6 @@
 [submodule "fasd"]
 	path = fasd
 	url = https://github.com/clvv/fasd
+[submodule "fzf-jump"]
+	path = fzf-jump
+	url = https://github.com/asoltys/fzf-jump.git
