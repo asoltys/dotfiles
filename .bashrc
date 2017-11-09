@@ -22,7 +22,7 @@ MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 if [ -x "$(command -v yarn)" ]; then
-  PATH="$PATH:$(yarn global bin)"
+  PATH="$PATH:$HOME/.yarn/bin"
 fi
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
@@ -164,4 +164,14 @@ fix() {
 
 dsf() { 
   git diff --no-index --color "$@" | diff-so-fancy 
+}
+
+f() {
+  if [ "$#" -lt 1 ]; then echo "Supply string to search for!"; return 1; fi
+  printf -v search "%q" "$*"
+  include="yml,js,json,php,md,styl,pug,jade,html,config,py,cpp,c,go,hs,rb,conf,fa,lst"
+  exclude=".config,.git,node_modules,vendor,build,yarn.lock,*.sty,*.bst,*.coffee,dist"
+  rg_command='rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" -g "*.{'$include'}" -g "!{'$exclude'}/*"'
+  files=`eval $rg_command $search | fzf --ansi --exact | awk -F ':' '{print $1":"$2":"$3}'`
+  [[ -n "$files" ]] && ${EDITOR:-vim} $files
 }
