@@ -148,7 +148,7 @@ fh() {
 }
 
 bind -x '"\C-f": "fzf-file-widget"'
-bind -x '"\C-o": "fzf-file-widget"'
+bind -x '"\C-o": "o"'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc'; fi
