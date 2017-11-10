@@ -148,6 +148,7 @@ fh() {
 }
 
 bind -x '"\C-f": "fzf-file-widget"'
+bind -x '"\C-o": "fzf-file-widget"'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc'; fi
@@ -173,4 +174,11 @@ f() {
   rg_command='rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" -g "*.{'$include'}" -g "!{'$exclude'}/*"'
   files=`eval $rg_command $search | fzf --ansi --exact | awk -F ':' '{print $1":"$2":"$3}'`
   [[ -n "$files" ]] && ${EDITOR:-vim} $files
+}
+
+o() {
+  local files
+  if [ "$#" -eq 1 ]; then xdg-open "$1"; return 1; fi
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
