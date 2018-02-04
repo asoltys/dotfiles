@@ -12,7 +12,6 @@ export LESS="--RAW-CONTROL-CHARS"
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 
 PATH=$PATH:/usr/sbin
-PATH=$PATH:~/jre1.7.0_09/bin$
 PATH=$PATH:/usr/local/bin
 
 NPM_PACKAGES="$HOME/.npm-packages"
@@ -39,15 +38,9 @@ fi
 if [ -d /usr/local/go/bin ]; then
   PATH=$PATH:/usr/local/go/bin
 fi
-if [ -d ~/gocode/bin ]; then
-  PATH=$PATH:~/gocode/bin
-  export GOPATH=~/gocode
-else
+if [ -d ~/go/bin ]; then
   export GOPATH=~/go
-fi
-
-if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
-  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+  PATH=$PATH:$GOPATH/bin
 fi
 
 if [ -d ~/Android/Sdk ]; then
@@ -164,16 +157,6 @@ fix() {
 
 dsf() { 
   git diff --no-index --color "$@" | diff-so-fancy 
-}
-
-f() {
-  if [ "$#" -lt 1 ]; then echo "Supply string to search for!"; return 1; fi
-  printf -v search "%q" "$*"
-  include="yml,js,json,php,md,styl,pug,jade,html,config,py,cpp,c,go,hs,rb,conf,fa,lst"
-  exclude=".config,.git,node_modules,vendor,build,yarn.lock,*.sty,*.bst,*.coffee,dist"
-  rg_command='rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" -g "*.{'$include'}" -g "!{'$exclude'}/*"'
-  files=`eval $rg_command $search | fzf --ansi --exact | awk -F ':' '{print $1":"$2":"$3}'`
-  [[ -n "$files" ]] && ${EDITOR:-vim} $files
 }
 
 o() {

@@ -72,4 +72,10 @@ alias am='git commit --amend'
 alias bc='bitcoin-cli'
 alias t='npm test'
 alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
-alias f='hmm'
+alias x='exit'
+alias lb="lncli --rpcserver=localhost:10002 --no-macaroons"
+alias lc="litecoin-cli"
+alias ln="lncli --rpcserver=localhost:10001 --macaroonpath=/home/adam/.lnd/data/core_test/admin.macaroon"
+alias la="lncli --rpcserver=localhost:10009 --macaroonpath=/home/adam/.lnd/data/core_main/admin.macaroon"
+alias bct="bitcoin-cli -testnet"
+alias ll="lncli --rpcserver=localhost:10005 --macaroonpath=/home/adam/.lnd/data/litecore_test/admin.macaroon"
