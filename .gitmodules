@@ -3,7 +3,7 @@
 	url = https://github.com/junegunn/fzf
 [submodule "fasd"]
 	path = fasd
-	url = https://github.com/clvv/fasd
+	url = https://github.com/asoltys/fasd
 [submodule "fzf-jump"]
 	path = fzf-jump
 	url = https://github.com/asoltys/fzf-jump.git
