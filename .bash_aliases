@@ -64,18 +64,20 @@ alias cc='cd ~/ccog'
 alias y='yarn'
 alias q='quasar'
 alias b='npm run build'
-alias l='litecoin-cli'
+alias bm='npm run build-mobile'
 alias hp='hyper'
 alias sc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias upd='sudo apt-get update'
 alias am='git commit --amend'
-alias bc='bitcoin-cli'
 alias t='npm test'
 alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
 alias x='exit'
-alias lb="lncli --rpcserver=localhost:10002 --no-macaroons"
+alias bc='bitcoin-cli'
+alias bct="bitcoin-cli -testnet -conf=/home/adam/data/.bitcoin_testnet/bitcoin.conf"
 alias lc="litecoin-cli"
-alias ln="lncli --rpcserver=localhost:10001 --macaroonpath=/home/adam/.lnd/data/core_test/admin.macaroon"
-alias la="lncli --rpcserver=localhost:10009 --macaroonpath=/home/adam/.lnd/data/core_main/admin.macaroon"
-alias bct="bitcoin-cli -testnet"
-alias ll="lncli --rpcserver=localhost:10005 --macaroonpath=/home/adam/.lnd/data/litecore_test/admin.macaroon"
+alias l="lncli"
+alias la="lncli --rpcserver=localhost:10001 --macaroonpath=/home/adam/.lnd.testa/admin.macaroon"
+alias lb="lncli --rpcserver=localhost:10002 --macaroonpath=/home/adam/.lnd.testb/admin.macaroon"
+alias lc="lncli --rpcserver=localhost:10003 --macaroonpath=/home/adam/.lnd.sima/admin.macaroon"
+alias ld="lncli --rpcserver=localhost:10004 --macaroonpath=/home/adam/.lnd.simb/admin.macaroon"
+alias bss="btcctl --simnet"
