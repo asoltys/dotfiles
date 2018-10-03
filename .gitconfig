@@ -1,6 +1,7 @@
 [user]
 	name = Adam Soltys
 	email = asoltys@gmail.com
+	signingkey = EDAC6CF3B91AC3AAC0F786E8A1027FED85A5CED3
 [core]
 	autocrlf = input
 	editor = vim -c start
@@ -35,3 +36,5 @@
 	helper = store
 [include]
   path = ~/.gitconfig_secrets
+[commit]
+	gpgsign = true
