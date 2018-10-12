@@ -73,11 +73,11 @@ alias t='npm test'
 alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
 alias x='exit'
 alias bc='bitcoin-cli'
-alias bct="bitcoin-cli -testnet -conf=/home/adam/data/.bitcoin_testnet/bitcoin.conf"
+alias bct="bitcoin-cli -testnet -conf=/mnt/disks/sdb/.bitcoin_testnet/bitcoin.conf"
 alias lc="litecoin-cli"
 alias l="lncli"
-alias la="lncli --rpcserver=localhost:10001 --macaroonpath=/home/adam/.lnd.testa/admin.macaroon"
-alias lb="lncli --rpcserver=localhost:10002 --macaroonpath=/home/adam/.lnd.testb/admin.macaroon"
-alias lc="lncli --rpcserver=localhost:10003 --macaroonpath=/home/adam/.lnd.sima/admin.macaroon"
-alias ld="lncli --rpcserver=localhost:10004 --macaroonpath=/home/adam/.lnd.simb/admin.macaroon"
+alias la="lncli -c bitcoin -n mainnet --rpcserver=localhost:10001 --tlscertpath=/home/adam/.lnd/tls.cert"
+alias lb="lncli -c bitcoin -n mainnet --rpcserver=localhost:10002 --tlscertpath=/home/adam/.lndb/tls.cert --lnddir=/home/adam/.lndb"
+alias lta="lncli --rpcserver=localhost:10003 --macaroonpath=/home/adam/.lndtest1/admin.macaroon --tlscertpath=/home/adam/.lndtest1/tls.cert"
+alias ltb="lncli --rpcserver=localhost:10004 --macaroonpath=/home/adam/.lndtest2/admin.macaroon --tlscertpath=/home/adam/.lndtest2/tls.cert"
 alias bss="btcctl --simnet"
