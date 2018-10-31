@@ -37,4 +37,5 @@
 [include]
   path = ~/.gitconfig_secrets
 [commit]
-	gpgsign = true
+	gpgsign = false
+	gpgsigning = false
