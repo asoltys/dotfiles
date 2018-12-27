@@ -74,10 +74,14 @@ alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
 alias x='exit'
 alias bc='bitcoin-cli'
 alias bct="bitcoin-cli -testnet -conf=/home/adam/data/.bitcoin_testnet/bitcoin.conf"
+alias bcr="bitcoin-cli -regtest"
 alias lc="litecoin-cli"
 alias l="lncli"
-alias la="lncli --rpcserver=localhost:10001 --macaroonpath=/home/adam/.lnd.testa/admin.macaroon"
-alias lb="lncli --rpcserver=localhost:10002 --macaroonpath=/home/adam/.lnd.testb/admin.macaroon"
+alias la="lncli --lnddir=/home/adam/.lnd.testa --network=testnet --chain=bitcoin --rpcserver=localhost:10001"
+alias lb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoin --rpcserver=localhost:10002"
 alias lc="lncli --rpcserver=localhost:10003 --macaroonpath=/home/adam/.lnd.sima/admin.macaroon"
 alias ld="lncli --rpcserver=localhost:10004 --macaroonpath=/home/adam/.lnd.simb/admin.macaroon"
 alias bss="btcctl --simnet"
+alias vag="vagrant"
+alias a="ssh a"
+alias hr="heroku"
