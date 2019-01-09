@@ -92,8 +92,8 @@ eval "`dircolors ~/.dircolors`"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_OPTS="--reverse --height 80%"
+export FZF_DEFAULT_COMMAND='fd --type file --color=always'
+export FZF_DEFAULT_OPTS="--reverse --height 80% --ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
 export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
