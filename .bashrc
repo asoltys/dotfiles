@@ -18,7 +18,6 @@ NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 if [ -x "$(command -v yarn)" ]; then
   PATH="$PATH:$HOME/.yarn/bin"
@@ -81,7 +80,7 @@ fi
 # Git Completion with 'g'
 . ~/.git-completion.sh
 . ~/.hub-completion.sh
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
+# complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -174,3 +173,4 @@ smartresize() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"

@@ -25,7 +25,7 @@ alias gc='git commit'
 alias gn='git clean -fd'
 alias gf='git fetch'
 alias gg='git config -l'
-alias gr='git reset --hard HEAD'
+alias gr='git reset --hard origin/master'
 alias gu='git submodule update'
 alias gui='git submodule update --init'
 alias gm='git checkout master'
@@ -37,6 +37,8 @@ alias gdc='git diff --cached'
 alias gb='git branch -a'
 alias gog='git lg'
 alias gi='git rebase HEAD~10 -i'
+alias gst='git stash'
+alias gsa='git stash apply'
 
 alias ~='cd ~'
 alias h='cd ~'
@@ -59,7 +61,7 @@ alias egd="cd ~/egdbooking_v2"
 alias vf='vim $(fzf)'
 alias cf='cat $(fzf)'
 alias gf='cd $(fzf)'
-alias tm='tmux new-session -A -s main'
+alias tm='tmux -2 new-session -A -s main'
 alias cc='cd ~/ccog'
 alias y='yarn'
 alias q='quasar'
@@ -74,14 +76,17 @@ alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
 alias x='exit'
 alias bc='bitcoin-cli'
 alias bct="bitcoin-cli -testnet -conf=/home/adam/data/.bitcoin_testnet/bitcoin.conf"
-alias bcr="bitcoin-cli -regtest"
+alias bcr="bitcoin-cli -regtest -conf=/home/adam/data/.bitcoin_regtest/bitcoin.conf"
 alias lc="litecoin-cli"
 alias l="lncli"
-alias la="lncli --lnddir=/home/adam/.lnd.testa --network=testnet --chain=bitcoin --rpcserver=localhost:10001"
-alias lb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoin --rpcserver=localhost:10002"
-alias lc="lncli --rpcserver=localhost:10003 --macaroonpath=/home/adam/.lnd.sima/admin.macaroon"
-alias ld="lncli --rpcserver=localhost:10004 --macaroonpath=/home/adam/.lnd.simb/admin.macaroon"
+alias lta="lncli --lnddir=/home/adam/.lnd.testa --network=testnet --chain=bitcoin --rpcserver=localhost:10001"
+alias ltb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoin --rpcserver=localhost:10002"
+alias la="lncli --lnddir=/home/adam/.lnd.sima --network=regtest --chain=bitcoin --rpcserver=localhost:10003"
+alias lb="lncli --lnddir=/home/adam/.lnd.simb --network=regtest --chain=bitcoin --rpcserver=localhost:10004"
 alias bss="btcctl --simnet"
 alias vag="vagrant"
-alias a="ssh a"
+alias a="ssh-keygen -f /home/adam/.ssh/known_hosts -R 192.168.10.1; ssh a"
 alias hr="heroku"
+alias ec="elements-cli"
+alias lna="lightning-cli"
+alias lnb="lightning-cli --lightning-dir=/home/adam/.lightningb"
