@@ -22,7 +22,7 @@
   l = pull
   f = fetch
   c = clone
-  lg = log --color=always --format='%C(auto)%h%d %s %C(blue)%an %C(bold)%C(black)%cr'
+  lg = log --color=always --format='%C(auto)%h%d %s %C(blue)%an %C(bold)%C(black)%aD'
 	ctags = !.git/hooks/ctags
 [color]
 	ui = always
@@ -37,4 +37,7 @@
 [include]
   path = ~/.gitconfig_secrets
 [commit]
-	gpgsign = true
+	gpgsign = false
+	gpgsigning = false
+[log]
+	date = iso

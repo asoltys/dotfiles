@@ -25,7 +25,7 @@ alias gc='git commit'
 alias gn='git clean -fd'
 alias gf='git fetch'
 alias gg='git config -l'
-alias gr='git reset --hard HEAD'
+alias gr='git reset --hard origin/master'
 alias gu='git submodule update'
 alias gui='git submodule update --init'
 alias gm='git checkout master'
@@ -37,6 +37,8 @@ alias gdc='git diff --cached'
 alias gb='git branch -a'
 alias gog='git lg'
 alias gi='git rebase HEAD~10 -i'
+alias gst='git stash'
+alias gsa='git stash apply'
 
 alias ~='cd ~'
 alias h='cd ~'
@@ -59,7 +61,7 @@ alias egd="cd ~/egdbooking_v2"
 alias vf='vim $(fzf)'
 alias cf='cat $(fzf)'
 alias gf='cd $(fzf)'
-alias tm='tmux new-session -A -s main'
+alias tm='tmux -2 new-session -A -s main'
 alias cc='cd ~/ccog'
 alias y='yarn'
 alias q='quasar'
@@ -81,3 +83,9 @@ alias lb="lncli -c bitcoin -n mainnet --rpcserver=localhost:10002 --tlscertpath=
 alias lta="lncli --rpcserver=localhost:10003 --macaroonpath=/home/adam/.lndtest1/admin.macaroon --tlscertpath=/home/adam/.lndtest1/tls.cert"
 alias ltb="lncli --rpcserver=localhost:10004 --macaroonpath=/home/adam/.lndtest2/admin.macaroon --tlscertpath=/home/adam/.lndtest2/tls.cert"
 alias bss="btcctl --simnet"
+alias vag="vagrant"
+alias a="ssh-keygen -f /home/adam/.ssh/known_hosts -R 192.168.10.1; ssh a"
+alias hr="heroku"
+alias ec="elements-cli"
+alias lna="lightning-cli"
+alias lnb="lightning-cli --lightning-dir=/home/adam/.lightningb"

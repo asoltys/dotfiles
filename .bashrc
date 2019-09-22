@@ -18,7 +18,6 @@ NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 if [ -x "$(command -v yarn)" ]; then
   PATH="$PATH:$HOME/.yarn/bin"
@@ -47,6 +46,7 @@ if [ -d ~/Android/Sdk ]; then
   export ANDROID_HOME=$HOME/Android/Sdk
   PATH=$PATH:$ANDROID_HOME/tools
   PATH=$PATH:$ANDROID_HOME/platform-tools
+  export ANDROID_SDK=$HOME/Android/Sdk
 fi
 
 export PATH 
@@ -80,7 +80,7 @@ fi
 # Git Completion with 'g'
 . ~/.git-completion.sh
 . ~/.hub-completion.sh
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
+# complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -91,8 +91,8 @@ eval "`dircolors ~/.dircolors`"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_OPTS="--reverse --height 80%"
+export FZF_DEFAULT_COMMAND='fd --type file --color=always'
+export FZF_DEFAULT_OPTS="--reverse --height 80% --ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
 export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -165,3 +165,12 @@ o() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
+
+smartresize() {
+   mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"
