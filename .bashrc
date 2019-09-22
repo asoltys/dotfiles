@@ -7,7 +7,6 @@ export HISTCONTROL=ignoredups:erasedups:ignorespace
 export HISTSIZE=9999
 export HISTIGNORE="&:[ ]*:exit"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-export DISPLAY=:0
 export LESS="--RAW-CONTROL-CHARS"
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 
