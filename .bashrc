@@ -4,7 +4,7 @@ set -o vi
 shopt -s histappend
 export EDITOR=vim
 export HISTCONTROL=ignoredups:erasedups:ignorespace
-export HISTSIZE=9999
+export HISTSIZE=99999
 export HISTIGNORE="&:[ ]*:exit"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export LESS="--RAW-CONTROL-CHARS"
@@ -12,7 +12,7 @@ export LESS="--RAW-CONTROL-CHARS"
 
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/bin
-
+PATH=$PATH:/usr/lib/jvm/jdk-13.0.2/bin
 NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  
@@ -43,10 +43,13 @@ fi
 
 if [ -d ~/Android/Sdk ]; then
   export ANDROID_HOME=$HOME/Android/Sdk
-  PATH=$PATH:$ANDROID_HOME/tools
-  PATH=$PATH:$ANDROID_HOME/platform-tools
+  PATH=$ANDROID_HOME/emulator:$PATH
+  PATH=$ANDROID_HOME/tools:$PATH
+  PATH=$ANDROID_HOME/tools/bin:$PATH
+  PATH=$ANDROID_HOME/platform-tools:$PATH
   export ANDROID_SDK=$HOME/Android/Sdk
 fi
+export JAVA_HOME=/usr/lib/jvm/jdk-13.0.2
 
 export PATH 
 
@@ -79,7 +82,7 @@ fi
 # Git Completion with 'g'
 . ~/.git-completion.sh
 . ~/.hub-completion.sh
-# complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -98,9 +101,10 @@ export FZF_ALT_V_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
 export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
-if [[ -n "$SSH_CLIENT" ]] && [[ -n "$SSH_TTY" ]] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
-fi
+
+#if [[ -n "$SSH_CLIENT" ]] && [[ -n "$SSH_TTY" ]] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
+# [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+#fi
 
 fasd_cache="$HOME/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then

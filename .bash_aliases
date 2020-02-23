@@ -25,7 +25,7 @@ alias gc='git commit'
 alias gn='git clean -fd'
 alias gf='git fetch'
 alias gg='git config -l'
-alias gr='git reset --hard origin/master'
+alias gr='git reset --hard HEAD'
 alias gu='git submodule update'
 alias gui='git submodule update --init'
 alias gm='git checkout master'
@@ -55,7 +55,7 @@ alias ass="cd ~/assignment"
 alias n="nautilus"
 alias pops="cd ~/pops"
 alias r="npm run dev"
-alias st="npm start"
+alias st="yarn start"
 alias ad="cd /var/www/pops/packages/usaid"
 alias egd="cd ~/egdbooking_v2"
 alias vf='vim $(fzf)'
@@ -65,7 +65,7 @@ alias tm='tmux -2 new-session -A -s main'
 alias cc='cd ~/ccog'
 alias y='yarn'
 alias q='quasar'
-alias b='npm run build'
+alias b='yarn build'
 alias bm='npm run build-mobile'
 alias hp='hyper'
 alias sc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
@@ -77,16 +77,32 @@ alias x='exit'
 alias bc='bitcoin-cli'
 alias bct="bitcoin-cli -testnet -conf=/home/adam/data/.bitcoin_testnet/bitcoin.conf"
 alias bcr="bitcoin-cli -regtest -conf=/home/adam/data/.bitcoin_regtest/bitcoin.conf"
+alias bcrb="/home/adam/bitcoin/src/bitcoin-cli -regtest -conf=/home/adam/data/.bitcoin19_regtest/bitcoin.conf"
+alias bcp="bitcoin-cli -conf=/home/adam/data/.bitcoin_pruned/bitcoin.conf" 
 alias lc="litecoin-cli"
 alias l="lncli"
 alias lta="lncli --lnddir=/home/adam/.lnd.testa --network=testnet --chain=bitcoin --rpcserver=localhost:10001"
 alias ltb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoin --rpcserver=localhost:10002"
 alias la="lncli --lnddir=/home/adam/.lnd.sima --network=regtest --chain=bitcoin --rpcserver=localhost:10003"
 alias lb="lncli --lnddir=/home/adam/.lnd.simb --network=regtest --chain=bitcoin --rpcserver=localhost:10004"
+alias lc="lncli --lnddir=/home/adam/.lnd.simc --network=regtest --chain=bitcoin --rpcserver=localhost:10005"
 alias bss="btcctl --simnet"
 alias vag="vagrant"
 alias a="ssh-keygen -f /home/adam/.ssh/known_hosts -R 192.168.10.1; ssh a"
 alias hr="heroku"
 alias ec="elements-cli"
+alias er="elements-cli -datadir=$HOME/data/.elements_regtest"
 alias lna="lightning-cli"
 alias lnb="lightning-cli --lightning-dir=/home/adam/.lightningb"
+alias lra="lightning-cli --lightning-dir=/home/adam/.lightningreg"
+alias lrb="lightning-cli --lightning-dir=/home/adam/.lightningregb"
+
+alias b-dae="bitcoind -datadir=$HOME/bitcoindir"
+alias b-cli="bitcoin-cli -datadir=$HOME/bitcoindir"
+
+alias e1-dae="$HOME/elements/src/elementsd -datadir=$HOME/elementsdir1"
+alias e1-cli="$HOME/elements/src/elements-cli -datadir=$HOME/elementsdir1"
+
+alias e2-dae="$HOME/elements/src/elementsd -datadir=$HOME/elementsdir2"
+alias e2-cli="$HOME/elements/src/elements-cli -datadir=$HOME/elementsdir2"
+
