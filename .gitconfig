@@ -37,6 +37,8 @@
 [include]
   path = ~/.gitconfig_secrets
 [commit]
-	gpgsign = true
+	gpgsign = false
 [log]
 	date = iso
+[pull]
+	rebase = true
