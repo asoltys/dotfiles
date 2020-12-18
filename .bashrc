@@ -180,6 +180,3 @@ complete -C /home/adam/bin/mc mc
 if [ $(command -v rlwrap) ] ; then
   alias node='NODE_NO_READLINE=1 rlwrap node'
 fi
-
-setterm -blength 0
-
