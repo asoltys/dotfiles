@@ -41,6 +41,9 @@ if [ -d ~/go/bin ]; then
   export GOPATH=~/go
   PATH=$PATH:$GOPATH/bin
 fi
+if [ -d ~/gocode/bin ]; then
+  PATH=$PATH:~/gocode/bin
+fi
 
 if [ -d ~/Android/Sdk ]; then
   export ANDROID_HOME=$HOME/Android/Sdk
@@ -171,8 +174,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"
 
+
 complete -C /home/adam/bin/mc mc
 
 if [ $(command -v rlwrap) ] ; then
   alias node='NODE_NO_READLINE=1 rlwrap node'
 fi
+
+setterm -blength 0
+
