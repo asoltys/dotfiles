@@ -13,6 +13,7 @@ export LESS="--RAW-CONTROL-CHARS"
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/lib/jvm/jdk-13.0.2/bin
+PATH="$PATH:/home/adam/.dat/releases/dat-14.0.2-linux-x64"
 NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  
@@ -93,7 +94,7 @@ eval "`dircolors ~/.dircolors`"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_HIDDEN="--hidden"
-export FZF_DEFAULT_COMMAND='fd --type file --color=always'
+export FZF_DEFAULT_COMMAND='fd --type file --color=always --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--reverse --height 80% --ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
@@ -102,9 +103,9 @@ export FZF_ALT_V_OPTS="$FZF_ALT_C_OPTS"
 export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-window down:3:hidden --bind '?:toggle-preview'"
 
 
-#if [[ -n "$SSH_CLIENT" ]] && [[ -n "$SSH_TTY" ]] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
-# [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
-#fi
+if [[ -n "$SSH_CLIENT" ]] && [[ -n "$SSH_TTY" ]] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
+ [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+fi
 
 fasd_cache="$HOME/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
@@ -146,14 +147,6 @@ fh() {
 bind -x '"\C-f": "fzf-file-widget"'
 bind -x '"\C-o": "o"'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/HATCON.local/asoltys/google-cloud-sdk/completion.bash.inc' ]; then source '/home/HATCON.local/asoltys/google-cloud-sdk/completion.bash.inc'; fi
-# added by Miniconda3 4.3.21 installer
-export PATH="/home/adam/miniconda3/bin:$PATH"
-
 fix() { 
   vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs ) 
 }
@@ -177,3 +170,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"
+
+complete -C /home/adam/bin/mc mc
+
+if [ $(command -v rlwrap) ] ; then
+  alias node='NODE_NO_READLINE=1 rlwrap node'
+fi
