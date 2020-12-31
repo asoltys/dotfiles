@@ -53,7 +53,7 @@ if [ -d ~/Android/Sdk ]; then
   PATH=$ANDROID_HOME/platform-tools:$PATH
   export ANDROID_SDK=$HOME/Android/Sdk
 fi
-export JAVA_HOME=/usr/lib/jvm/jdk-13.0.2
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
 
 export PATH 
 
