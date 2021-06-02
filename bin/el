@@ -1,1 +1,3 @@
-elements-cli -datadir=$HOME/la/hasura/liquidregtest/liquid-config -rpcport=7045 $@
+elements-cli -datadir=$HOME/la/hasura/liquidregtest/liquid-config -rpcport=7045 "$@"
+# elements-cli -conf=$HOME/data/.elements/elements.conf "$@"
+

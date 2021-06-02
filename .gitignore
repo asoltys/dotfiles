@@ -1,1 +1,44 @@
-*
+# Ignore all the bash stuff
+
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.ssh
+.viminfo
+
+# umbrel-dev
+docker-compose.override.yml
+
+# Files and data directories created by services
+# that we shouldn't accidently commit
+
+*.dat
+*.log
+*.lock
+*.cookie
+*.pid
+*.env
+bitcoin/*
+db/*
+electrs/*
+nginx/*
+events/signals/*
+lnd/*
+logs/*
+statuses/*
+tor/*
+app-data/*
+
+# Commit these files
+
+!statuses/update-status.json
+
+# Commit these empty directories
+
+!db/.gitkeep
+!events/signals/.gitkeep
+!lnd/.gitkeep
+!logs/.gitkeep
+!tor/data/.gitkeep
+!tor/run/.gitkeep

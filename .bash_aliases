@@ -16,6 +16,7 @@ alias ngxr='sudo /etc/init.d/nginx restart'
 alias g='hub'
 alias gs='git status'
 alias gp='git push'
+alias gcp='git cherry-pick --continue'
 alias gfp='git ftp push'
 alias gfpp='git ftp push -s prod'
 alias gl='git pull'
@@ -66,6 +67,7 @@ alias cc='cd ~/ccog'
 alias y='yarn'
 alias q='quasar'
 alias b='yarn build'
+alias bb='nice ./build.sh'
 alias bm='npm run build-mobile'
 alias hp='hyper'
 alias sc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
@@ -75,8 +77,10 @@ alias t='npm test'
 alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
 alias x='exit'
 alias bc='bitcoin-cli'
-alias bct="bitcoin-cli -testnet -conf=/home/adam/data/.bitcoin_testnet/bitcoin.conf"
-alias bcr="bitcoin-cli -regtest -conf=/home/adam/data/.bitcoin_regtest/bitcoin.conf"
+alias bcs="bitcoin-cli -conf=/home/adam/data/.bitcoin_signet/bitcoin.conf"
+alias bcr="bitcoin-cli -rpcwallet='' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
+alias bct="bitcoin-cli -rpcwallet='test' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
+alias lcr="litecoin-cli -regtest -conf=/home/adam/data/.litecoin_regtest/litecoin.conf"
 alias bcrb="/home/adam/bitcoin/src/bitcoin-cli -regtest -conf=/home/adam/data/.bitcoin19_regtest/bitcoin.conf"
 alias bcp="bitcoin-cli -conf=/home/adam/data/.bitcoin_pruned/bitcoin.conf" 
 alias lc="litecoin-cli"
@@ -91,16 +95,18 @@ alias vag="vagrant"
 alias a="ssh-keygen -f /home/adam/.ssh/known_hosts -R 192.168.10.1; ssh a"
 alias hr="heroku"
 alias ec="elements-cli -datadir=$HOME/data/.elements"
-alias er="elements-cli -rpcwallet=boinos"
+alias er="elements-cli -conf=/home/adam/coinos-server/config/liquid/elements.conf"
 alias ers="elements-cli -rpcwallet=swapserver"
+alias erl="elements-cli -conf=$HOME/la/hasura/liquidregtest/liquid-config/elements.conf"
 alias brn="bitcoin-cli -datadir=$HOME/.nigiri/resources/volumes/liquidregtest/config -rpcport=18433"
-alias ern="elements-cli -datadir=$HOME/.nigiri/resources/volumes/liquidregtest/liquid-config -rpcport=7041 -rpcwallet=test"
+alias ern="elements-cli -datadir=$HOME/.nigiri/resources/volumes/liquidregtest/liquid-config -rpcport=7041"
 # alias el="elements-cli -datadir=$HOME/la/hasura/liquidregtest/liquid-config -rpcport=7045"
 alias bl="bitcoin-cli -datadir=$HOME/la/hasura/liquidregtest/config -rpcport=18433 -rpcuser=admin1 -rpcpassword=123"
 alias lna="lightning-cli"
 alias lnb="lightning-cli --lightning-dir=/home/adam/.lightningb"
 alias lra="lightning-cli --lightning-dir=/home/adam/.lightningreg"
 alias lrb="lightning-cli --lightning-dir=/home/adam/.lightningregb"
+alias lar="sudo lightning-cli --lightning-dir=/home/adam/coinos-server/config/lightning"
 
 alias b-dae="bitcoind -datadir=$HOME/bitcoindir"
 alias b-cli="bitcoin-cli -datadir=$HOME/bitcoindir"
@@ -118,10 +124,15 @@ alias raw="el getrawtransaction"
 alias ub="el unblindrawtransaction"
 alias addr="el getnewaddress"
 alias send="el sendtoaddress"
+sendcad() {
+elements-cli -datadir=$HOME/la/hasura/liquidregtest/liquid-config -rpcport=7045 sendtoaddress $1 $2 "" "" false false 1 "UNSET" 1e31485c787e7432c7d09a4e38d893982cebfdafcf70ec5c82bf632363fdc90f
+} 
 alias gen="el generatetoaddress"
 alias bal="el getbalance"
 alias sr="el sendrawtransaction"
 alias dp="el decodepsbt"
+alias info="el getaddressinfo"
 alias fdn="fd --no-ignore"
 alias rgn="rg --no-ignore"
 alias dev="yarn dev"
+alias lbp="lb payinvoice"
