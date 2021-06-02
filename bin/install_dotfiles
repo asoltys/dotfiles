@@ -2,7 +2,7 @@
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update
-sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip build-essential cmake python-dev python3-dev yarn tmux -yy
+sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip build-essential cmake python-dev python3-dev yarn tmux hub -yy
 
 rsync -ar ~/dotfiles/ ~/
 
@@ -31,13 +31,6 @@ if [ ! -d ~/.vim ]; then
   ln s ~/.vim/.vimrc ~/.vimrc
   cd ~/.vim/bundle/YouCompleteMe
   ./install.py --tern-completer
-fi
-
-if [ ! -d ~/.hub ]; then
-  wget https://github.com/github/hub/releases/download/v2.6.0/hub-linux-arm64-2.6.0.tgz 
-  tar xvfz hub-linux-arm64-2.6.0.tgz 
-  sudo hub-linux-arm64-2.6.0/install
-  rm -rf hub-linux-arm64-2.6.0
 fi
 
 if [ ! -d ~/.config/base16-shell ]; then
