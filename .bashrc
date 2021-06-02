@@ -16,8 +16,6 @@ PATH=$PATH:/usr/lib/jvm/jdk-13.0.2/bin
 PATH="$PATH:/home/adam/.dat/releases/dat-14.0.2-linux-x64"
 NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
-unset MANPATH  
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 if [ -x "$(command -v yarn)" ]; then
   PATH="$PATH:$HOME/.yarn/bin"
@@ -78,10 +76,6 @@ fi
 
 if [ -f ~/.github_credentials ]; then
 	. ~/.github_credentials
-fi
-
-if [ -f ~/.dropbox_credentials ]; then
-	. ~/.dropbox_credentials
 fi
 
 # Git Completion with 'g'
