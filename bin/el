@@ -1,1 +1,1 @@
-bitcoin-cli -conf=$HOME/coinos-server/config/bitcoin/bitcoin.conf -rpcwallet="" "$@"
+elements-cli -conf=$HOME/coinos-server/config/liquid/elements.conf -rpcwallet="coinos" "$@"

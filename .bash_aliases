@@ -77,11 +77,11 @@ alias t='npm test'
 alias wrd='cd ~/wrd/Source/WaterResourceData.Web.UI'
 alias x='exit'
 alias bc='bitcoin-cli'
-alias br="bitcoin-cli -rpcwallet='' -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
+alias br="bitcoin-cli -rpcwallet='' -conf=/home/adam/data/.bitcoin_regtest/bitcoin.conf"
 alias bcs="bitcoin-cli -conf=/home/adam/data/.bitcoin_signet/bitcoin.conf"
-alias bcr="bitcoin-cli -rpcwallet='' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
+alias bcr="bitcoin-cli -rpcwallet='coinos' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
+alias lcr="bitcoin-cli -rpcwallet='coinos' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
 alias bct="bitcoin-cli -rpcwallet='test' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf"
-alias lcr="litecoin-cli -regtest -conf=/home/adam/data/.litecoin_regtest/litecoin.conf"
 alias bcrb="/home/adam/bitcoin/src/bitcoin-cli -regtest -conf=/home/adam/data/.bitcoin19_regtest/bitcoin.conf"
 alias bcp="bitcoin-cli -conf=/home/adam/data/.bitcoin_pruned/bitcoin.conf" 
 alias lc="litecoin-cli"
@@ -90,9 +90,10 @@ alias lta="lncli --lnddir=/home/adam/.lnd.testa --network=testnet --chain=bitcoi
 alias ltb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoin --rpcserver=localhost:10002"
 alias la="docker exec -it la lightning-cli"
 alias lb="docker exec -it lb lightning-cli"
+alias ld="docker exec -it lnd lncli --network=regtest --chain=bitcoin"
 #alias la="lncli --lnddir=/home/adam/.lnd.sima --network=regtest --chain=bitcoin --rpcserver=localhost:10003"
 #alias lb="lncli --lnddir=/home/adam/.lnd.simb --network=regtest --chain=bitcoin --rpcserver=localhost:10004"
-alias lc="lncli --lnddir=/home/adam/.lnd.simc --network=regtest --chain=bitcoin --rpcserver=localhost:10005"
+#alias lc="lncli --lnddir=/home/adam/.lnd.simc --network=regtest --chain=bitcoin --rpcserver=localhost:10005"
 alias bss="btcctl --simnet"
 alias vag="vagrant"
 alias a="ssh-keygen -f /home/adam/.ssh/known_hosts -R 192.168.10.1; ssh a"
@@ -132,7 +133,6 @@ alias snd="bitcoin-cli -rpcwallet='' -regtest -conf=/home/adam/coinos-server/con
 sendcad() {
 elements-cli -datadir=$HOME/la/hasura/liquidregtest/liquid-config -rpcport=7045 sendtoaddress $1 $2 "" "" false false 1 "UNSET" 1e31485c787e7432c7d09a4e38d893982cebfdafcf70ec5c82bf632363fdc90f
 } 
-alias gen="el generatetoaddress"
 alias bal="el getbalance"
 alias sr="el sendrawtransaction"
 alias dp="el decodepsbt"
@@ -142,4 +142,7 @@ alias rgn="rg --no-ignore"
 alias dev="yarn dev"
 alias lbp="lb payinvoice"
 alias dup="docker-compose up -d --remove-orphans"
-alias down="docker-compose down"
+alias down="docker-compose down --remove-orphans"
+alias btc="cp ~/bin/btc ~/bin/el"
+alias elem="cp ~/bin/elem ~/bin/el"
+alias ltc="cp ~/bin/ltc ~/bin/el"
