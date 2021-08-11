@@ -1,0 +1,1 @@
+docker exec -it litecoin litecoin-cli -conf=/config/litecoin.conf -rpcwallet="coinos" "$@"
