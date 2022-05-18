@@ -59,10 +59,10 @@ export PATH
 export PS1="(\[\]15:13:57) ○ [\[\e[0;34m\]\u\[\e[39m\]@\[\e[0;32m\]\H\[\e[39m\]] \[\e[0;33m\]\w\[\e[39m\] \[\e[39m\]"
 export PS4='$0.$LINENO+ '
 
-# BASE16_SHELL=$HOME/.config/base16-shell/
-# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-# base16_default-dark
-# force_color_prompt=yes
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+base16_default-dark
+force_color_prompt=yes
 
 # Disable control flow capture
 if [ -t 0 ]; then   # only run if stdin is a terminal
@@ -181,3 +181,14 @@ export SDKMAN_DIR="/home/adam/.sdkman"
 [[ -s "/home/adam/.sdkman/bin/sdkman-init.sh" ]] && source "/home/adam/.sdkman/bin/sdkman-init.sh"
 
 alias sudo='sudo '
+
+# pnpm
+export PNPM_HOME="/home/adam/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/adam/google-cloud-sdk/path.bash.inc' ]; then . '/home/adam/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/adam/google-cloud-sdk/completion.bash.inc' ]; then . '/home/adam/google-cloud-sdk/completion.bash.inc'; fi

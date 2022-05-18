@@ -1,8 +1,7 @@
 #!/bin/bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update
-sudo apt-get install vim git curl ack-grep exuberant-ctags tree xclip build-essential cmake python-dev python3-dev yarn tmux hub fasd -yy
+sudo apt-get install vim git curl xclip build-essential tmux hub fasd -yy
 
 rsync -ar ~/dotfiles/ ~/
 
@@ -20,11 +19,6 @@ echo "*" > ~/.git/info/exclude
 ln -sf /usr/bin/git ~/bin/gits
 chmod 600 ~/.ssh/id_rsa
 
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts 
-curl -fLo "DejaVu Sans Mono for Powerline Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DejaVuSansMono/Regular/complete/DejaVu%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete%20Mono.ttf
-
-
 if [ ! -d ~/.vim ]; then
   git clone https://github.com/asoltys/vim ~/.vim
   cd ~/.vim
@@ -32,13 +26,11 @@ if [ ! -d ~/.vim ]; then
   ln s ~/.vim/.vimrc ~/.vimrc
 fi
 
-if [ ! -d ~/.config/base16-shell ]; then
-  git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-  source ~/.config/base16-shell/profile_helper.sh
-  base16_default-dark
-fi
-
-yarn global add diff-so-fancy
+#if [ ! -d ~/.config/base16-shell ]; then
+#  git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+#  source ~/.config/base16-shell/profile_helper.sh
+#  base16_default-dark
+#fi
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
