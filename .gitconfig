@@ -31,7 +31,7 @@
 [http]
 	postBuffer = 524288000
 [push]
-	default = current
+	default = upstream
 [credential]
 	helper = store
 [include]

@@ -145,10 +145,6 @@ fh() {
 bind -x '"\C-f": "fzf-file-widget"'
 bind -x '"\C-o": "o"'
 
-fix() { 
-  vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs ) 
-}
-
 dsf() { 
   git diff --no-index --color "$@" | diff-so-fancy 
 }

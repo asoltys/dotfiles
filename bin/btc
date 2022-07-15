@@ -1,1 +1,1 @@
-bitcoin-cli -conf=$HOME/coinos-server/config/bitcoin/bitcoin.conf -rpcwallet="" "$@"
+docker exec -it bitcoin bitcoin-cli -conf=/home/bitcoin/.bitcoin/bitcoin.conf -rpcwallet="coinos" "$@"

@@ -17,6 +17,8 @@ alias g='hub'
 alias gs='git status'
 alias gp='git push'
 alias gcp='git cherry-pick --continue'
+alias gcs='git cherry-pick --skip'
+alias gca='git cherry-pick --abort'
 alias gfp='git ftp push'
 alias gfpp='git ftp push -s prod'
 alias gl='git pull'
@@ -56,7 +58,7 @@ alias ass="cd ~/assignment"
 alias n="nautilus"
 alias pops="cd ~/pops"
 alias r="npm run dev"
-alias st="yarn start"
+alias st="npm run start"
 alias ad="cd /var/www/pops/packages/usaid"
 alias egd="cd ~/egdbooking_v2"
 alias vf='vim $(fzf)'
@@ -66,7 +68,7 @@ alias tm='tmux -2 new-session -A -s main'
 alias cc='cd ~/ccog'
 alias y='yarn'
 alias q='quasar'
-alias b='yarn build'
+alias b='pnpm run build'
 alias bb='nice ./build.sh'
 alias bm='npm run build-mobile'
 alias hp='hyper'
@@ -88,7 +90,7 @@ alias lc="litecoin-cli"
 alias l="lncli"
 alias lta="lncli --lnddir=/home/adam/.lnd.testa --network=testnet --chain=bitcoin --rpcserver=localhost:10001"
 alias ltb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoin --rpcserver=localhost:10002"
-alias la="docker exec -it la lightning-cli"
+alias la="docker exec -it cl lightning-cli"
 alias lb="docker exec -it lb lightning-cli"
 alias ld="docker exec -it lnd lncli --network=regtest --chain=bitcoin"
 #alias la="lncli --lnddir=/home/adam/.lnd.sima --network=regtest --chain=bitcoin --rpcserver=localhost:10003"
@@ -124,10 +126,11 @@ alias e2-cli="$HOME/elements/src/elements-cli -datadir=$HOME/elementsdir2"
 
 alias lr="cd ~/la"
 alias t="tdex-cli"
-alias dc="el decoderawtransaction"
+alias dc="docker-compose"
+alias dcd="el decoderawtransaction"
 alias raw="el getrawtransaction"
 alias ub="el unblindrawtransaction"
-alias addr="el getnewaddress"
+alias addr="el getnewaddress \"\" p2sh-segwit"
 alias send="el sendtoaddress"
 alias snd="bitcoin-cli -rpcwallet='' -regtest -conf=/home/adam/coinos-server/config/bitcoin/bitcoin.conf sendtoaddress"
 sendcad() {
@@ -145,6 +148,13 @@ alias dup="docker-compose up -d --remove-orphans"
 alias down="docker-compose down --remove-orphans"
 alias btc="cp ~/bin/btc ~/bin/el"
 alias elem="cp ~/bin/elem ~/bin/el"
+alias lt="cp ~/bin/lt ~/bin/el"
 alias ltc="cp ~/bin/ltc ~/bin/el"
 alias gca="git cherry-pick --abort"
 alias lg="docker logs -fn 200"
+alias qr="docker exec -it postgres psql -U postgres -x -c"
+alias qrr="docker exec -it postgres psql -U raretoshi -x -c"
+alias fix='vim +/HEAD `git diff --name-only | uniq`'
+alias rst="docker restart"
+alias psql="docker exec -it postgres psql -U postgres"
+alias psqlr="docker exec -it postgres psql -U raretoshi"
