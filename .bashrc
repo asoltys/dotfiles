@@ -38,7 +38,7 @@ export PS1="(\[\]15:13:57) ○ [\[\e[0;34m\]\u\[\e[39m\]@\[\e[0;32m\]\H\[\e[39m\
 export PS4='$0.$LINENO+ '
 
 BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+source $BASE16_SHELL/profile_helper.sh
 base16_default-dark
 force_color_prompt=yes
 
@@ -145,3 +145,4 @@ alias sudo='sudo '
 # pnpm
 export PNPM_HOME="/home/adam/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+# pnpm end
