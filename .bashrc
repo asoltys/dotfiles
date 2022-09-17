@@ -1,4 +1,3 @@
-# Use vi mode instead of Emacs for readline
 [[ $- == *i* ]] || return
 set -o vi
 shopt -s histappend
@@ -12,25 +11,14 @@ export LESS="--RAW-CONTROL-CHARS"
 
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/bin
-PATH=$PATH:/usr/lib/jvm/jdk-13.0.2/bin
-PATH="$PATH:/home/adam/.dat/releases/dat-14.0.2-linux-x64"
 NPM_PACKAGES="$HOME/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 
-if [ -x "$(command -v yarn)" ]; then
-  PATH="$PATH:$HOME/.yarn/bin"
-fi
 if [ -d ~/bin ]; then
   PATH=$PATH:~/bin
 fi
-if [ -d /var/www/bitcoin/src ]; then
-  PATH=$PATH:/var/www/bitcoin/src
-fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
-fi
-if [ -d ~/.rvm/bin ]; then
-  PATH=$PATH:~/.rvm/bin
 fi
 if [ -d /usr/local/go/bin ]; then
   PATH=$PATH:/usr/local/go/bin
@@ -42,16 +30,6 @@ fi
 if [ -d ~/gocode/bin ]; then
   PATH=$PATH:~/gocode/bin
 fi
-
-if [ -d ~/Android/Sdk ]; then
-  export ANDROID_HOME=$HOME/Android/Sdk
-  PATH=$ANDROID_HOME/emulator:$PATH
-  PATH=$ANDROID_HOME/tools:$PATH
-  PATH=$ANDROID_HOME/tools/bin:$PATH
-  PATH=$ANDROID_HOME/platform-tools:$PATH
-  export ANDROID_SDK=$HOME/Android/Sdk
-fi
-export JAVA_HOME=/usr/lib/jvm/jdk-13.0.2
 
 export PATH 
 
@@ -82,9 +60,6 @@ fi
 . ~/.git-completion.sh
 . ~/.hub-completion.sh
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null
-
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 . ~/.bash_aliases
 
@@ -156,35 +131,17 @@ o() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-smartresize() {
-   mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
-}
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"
 
-
-complete -C /home/adam/bin/mc mc
-
 if [ $(command -v rlwrap) ] ; then
   alias node='NODE_NO_READLINE=1 rlwrap node'
 fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/adam/.sdkman"
-[[ -s "/home/adam/.sdkman/bin/sdkman-init.sh" ]] && source "/home/adam/.sdkman/bin/sdkman-init.sh"
 
 alias sudo='sudo '
 
 # pnpm
 export PNPM_HOME="/home/adam/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/adam/google-cloud-sdk/path.bash.inc' ]; then . '/home/adam/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/adam/google-cloud-sdk/completion.bash.inc' ]; then . '/home/adam/google-cloud-sdk/completion.bash.inc'; fi
