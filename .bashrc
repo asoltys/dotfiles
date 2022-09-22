@@ -131,18 +131,8 @@ o() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# export PATH="$HOME/.nodenv/bin:$HOME/.nodenv/shims:$PATH"
-
 if [ $(command -v rlwrap) ] ; then
   alias node='NODE_NO_READLINE=1 rlwrap node'
 fi
 
 alias sudo='sudo '
-
-# pnpm
-export PNPM_HOME="/home/adam/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
