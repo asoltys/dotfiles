@@ -93,6 +93,7 @@ alias ltb="lncli --lnddir=/home/adam/.lnd.testb --network=testnet --chain=bitcoi
 alias dx="docker exec -it"
 alias rd="docker exec -it redis redis-cli"
 alias la="docker exec -it cl lightning-cli"
+alias la2="docker exec -it cl2 lightning-cli"
 alias lb="docker exec -it lb lightning-cli"
 alias ld="docker exec -it lnd lncli --network=regtest --chain=bitcoin"
 alias ld2="docker exec -it lnd2 lncli --network=regtest --chain=bitcoin"
