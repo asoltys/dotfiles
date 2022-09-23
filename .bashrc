@@ -136,3 +136,8 @@ if [ $(command -v rlwrap) ] ; then
 fi
 
 alias sudo='sudo '
+
+# pnpm
+export PNPM_HOME="/home/adam/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
