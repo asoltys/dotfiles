@@ -33,6 +33,10 @@ fi
 
 export PATH 
 
+# Pretty colors
+export PS1="(\[\]15:13:57) ○ [\[\e[0;34m\]\u\[\e[39m\]@\[\e[0;32m\]\H\[\e[39m\]] \[\e[0;33m\]\w\[\e[39m\] \[\e[39m\]"
+export PS4='$0.$LINENO+ '
+
 BASE16_SHELL=$HOME/.config/base16-shell/
 source $BASE16_SHELL/profile_helper.sh
 base16_gigavolt
