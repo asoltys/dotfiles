@@ -39,7 +39,7 @@ export PS4='$0.$LINENO+ '
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 source $BASE16_SHELL/profile_helper.sh
-base16_gigavolt
+base16_horizon-dark
 force_color_prompt=yes
 
 # Disable control flow capture
@@ -89,8 +89,6 @@ unset fasd_cache
 
 source ~/fzf-jump/fzf-jump.plugin.bash
 
-unalias s
-unalias zz
 zz() {
   local dir
   dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
