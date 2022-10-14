@@ -89,28 +89,6 @@ unset fasd_cache
 
 source ~/fzf-jump/fzf-jump.plugin.bash
 
-zz() {
-  local dir
-  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
-}
-
-v() {
-  local file
-  if [ -f "$1" ]; then
-    vim $1
-  else
-    if [ $# -gt 0 ]; then
-      local f=$(fasd -Rfl -b viminfo "$1" -1)
-      echo $f
-      if [ -f $f ]; then
-        vim $f
-      fi
-    else
-      file="$(fasd -Rfl -b viminfo "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
-    fi
-  fi
-}
-
 fh() {
   [ "$FZF_HIDDEN" = "--hidden" ] && export FZF_HIDDEN="" || export FZF_HIDDEN="--hidden"
 }
