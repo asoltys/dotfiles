@@ -39,7 +39,7 @@ export PS4='$0.$LINENO+ '
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 source $BASE16_SHELL/profile_helper.sh
-base16_horizon-dark
+base16_darktooth
 force_color_prompt=yes
 
 # Disable control flow capture
