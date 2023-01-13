@@ -1,2 +1,1 @@
-set -x
-docker exec -it liquid elements-cli -rpcwallet="external" -named sendtoaddress address="$1" amount="$2" assetlabel="$3"
+docker exec -it liquid elements-cli -rpcwallet="coinos" -named sendtoaddress address="$1" amount="$2" assetlabel="$3" avoid_reuse=false

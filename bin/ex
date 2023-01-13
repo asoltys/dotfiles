@@ -1,1 +1,1 @@
-docker exec -it bitcoin bitcoin-cli -rpcwallet="external" "$@"
+docker exec -it bc bitcoin-cli -rpcwallet="external" "$@"
