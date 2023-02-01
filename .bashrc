@@ -130,3 +130,6 @@ export LS_COLORS
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+function ct { curl -H "content-type: application/json" -H "authorization: bearer $T" $@; }
+export -f ct

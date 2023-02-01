@@ -1,4 +1,4 @@
 #!/bin/bash
 shopt -s expand_aliases
 source ~/.bash_aliases
-el generatetoaddress "$@" $(el getnewaddress "" "p2sh-segwit")
+el -rpcwallet=external generatetoaddress "$@" $(el -rpcwallet=external getnewaddress "" "p2sh-segwit")
