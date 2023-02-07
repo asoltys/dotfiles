@@ -59,6 +59,7 @@ alias upd='sudo apt-get update'
 alias am='git commit --amend'
 alias x='exit'
 alias dx="docker exec -it"
+alias rd="docker exec -it redis redis-cli"
 alias db="docker exec -it db keydb-cli"
 alias la="docker exec -it cl lightning-cli"
 alias lb="docker exec -it clb lightning-cli"
