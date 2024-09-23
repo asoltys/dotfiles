@@ -1,1 +1,1 @@
-docker exec -it liquid elements-cli -rpcwallet="coinos" "$@"
+docker exec -it lq elements-cli -rpcwallet="coinos" "$@"

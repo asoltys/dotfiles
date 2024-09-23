@@ -8,6 +8,9 @@ export HISTSIZE=99999
 export HISTIGNORE="&:[ ]*:exit"
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export LESS="--RAW-CONTROL-CHARS"
+export ANDROID_HOME=/home/adam/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
 
 PATH=$PATH:/usr/sbin
@@ -26,6 +29,7 @@ if [ -d /usr/local/go/bin ]; then
 fi
 if [ -d ~/go/bin ]; then
   export GOPATH=~/go
+  export GOBIN=~/go/bin
   PATH=$PATH:$GOPATH/bin
 fi
 if [ -d ~/gocode/bin ]; then
@@ -78,7 +82,7 @@ export FZF_CTRL_R_OPTS="--sort --exact --reverse --preview 'echo {}' --preview-w
 
 
 if [[ -n "$SSH_CLIENT" ]] && [[ -n "$SSH_TTY" ]] && [[ $- =~ "i" ]] && command -v tmux>/dev/null; then
- [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux new-session -A -s main
+ [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec DISPLAY=$DISPLAY tmux new-session -A -s main
 fi
 
 fasd_cache="$HOME/.fasd-init-bash"
@@ -131,5 +135,7 @@ export LS_COLORS
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
-function ct { curl -H "content-type: application/json" -H "authorization: bearer $T" $@; }
+function ct { curl -H "content-type: application/json" -H "authorization: bearer $token" "$@"; }
 export -f ct
+# eval "$(direnv hook bash)"
+
